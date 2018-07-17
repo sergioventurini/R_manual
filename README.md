@@ -1,1 +1,1 @@
-# R_manual
+This repository contains the manual of R and Radiant developed for the 30001 course (Statistics) at  Bocconi University.
