@@ -6,20 +6,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>An introduction to R and Radiant for a first course in Statistics</title>
-  <meta name="description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi.">
+  <meta name="description" content="Short manual for learning some elements of R and Radiant. This is a piece of material of the course 30001 (Statistics) at Bocconi University.">
   <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="An introduction to R and Radiant for a first course in Statistics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
-  <meta name="github-repo" content="sergioventurini/manuale_R" />
+  <meta property="og:description" content="Short manual for learning some elements of R and Radiant. This is a piece of material of the course 30001 (Statistics) at Bocconi University." />
+  <meta name="github-repo" content="sergioventurini/R_manual" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="An introduction to R and Radiant for a first course in Statistics" />
   
-  <meta name="twitter:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
+  <meta name="twitter:description" content="Short manual for learning some elements of R and Radiant. This is a piece of material of the course 30001 (Statistics) at Bocconi University." />
   
 
 
@@ -210,18 +210,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In this case, we have created a new object called <tt>txt</tt> that contains a vector of 7 text strings (the term <tt>chr</tt> that appears at the beginning of the output line indicates that the content of the object is of this type). The output of the <tt>str()</tt> function informs us of these characteristics. <tt>c()</tt> is the function to use for creating a vector, that is an object with a single dimension that can contain elements of the same type, in this case text strings<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>.</p>
 <p>If you want to show the list of objects created so far, you can use the function <tt>ls()</tt></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">ls</span>()</code></pre></div>
-<pre><code> [1] &quot;A&quot;                 &quot;absfreq&quot;           &quot;adv_sales&quot;        
- [4] &quot;advertising_sales&quot; &quot;b&quot;                 &quot;bp_out&quot;           
- [7] &quot;comp&quot;              &quot;comp_m1&quot;           &quot;comp_m1_fitted&quot;   
-[10] &quot;comp_m1_resid&quot;     &quot;comp_m2&quot;           &quot;comp_m2_fitted&quot;   
-[13] &quot;comp_m2_resid&quot;     &quot;D&quot;                 &quot;dat&quot;              
-[16] &quot;data_for_predict&quot;  &quot;forbes94&quot;          &quot;gender&quot;           
-[19] &quot;income&quot;            &quot;lev&quot;               &quot;lev_thr&quot;          
-[22] &quot;pareto_dat&quot;        &quot;pdat&quot;              &quot;program_no&quot;       
-[25] &quot;program_yes&quot;       &quot;ROS_0&quot;             &quot;ROS_1&quot;            
-[28] &quot;stdres&quot;            &quot;supermarket&quot;       &quot;txt&quot;              
-[31] &quot;w&quot;                 &quot;x&quot;                 &quot;X&quot;                
-[34] &quot;y&quot;                 &quot;z&quot;                </code></pre>
+<pre><code>[1] &quot;txt&quot; &quot;x&quot;  </code></pre>
 <p>Recall that <tt>R</tt> is <em>case sensitive</em>, that is, it distinguishes between uppercase and lowercase characters. Finally, if you create a new object using the name of an existing object, you will clearly lose the old object, whose content will be replaced with that of the new one, for example:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(y)</code></pre></div>
@@ -279,7 +268,7 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "none"
 }
 });
 });
