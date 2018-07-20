@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-18">
+<meta name="date" content="2018-07-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -192,8 +192,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="descriptive-R" class="section level2">
 <h2><span class="header-section-number">2.1</span> First examples with <tt>R</tt></h2>
-<p>Before moving to <tt>Radiant</tt>, we would like to present some <tt>R</tt> commands, that is <tt>table()</tt>, <tt>pie()</tt> and <tt>boxplot()</tt>, which allow you to carry out simple descriptive analyses.</p>
-<p>The <tt>table()</tt> function allows you to create a frequency distribution for a single discrete qualitative/categorical or discrete numerical variable. As an example, let’s consider the variable <tt>MBA</tt>, that indicates the CEOs included in the data frame <tt>forbes94</tt> that had an MBA title in 1994. The following code builds the frequency distribution of the variable <tt>MBA</tt>:</p>
+<p>Before moving to <tt>Radiant</tt>, we would like to present some <tt>R</tt> commands, that is <tt>table()</tt>, <tt>pie()</tt> and <tt>boxplot()</tt>, which allow us to carry out simple descriptive analyses.</p>
+<p>The <tt>table()</tt> function allows us to create a frequency distribution for a single discrete qualitative/categorical or discrete numerical variable. As an example, let’s consider the variable <tt>MBA</tt>, that indicates the CEOs included in the data frame <tt>forbes94</tt> that had an MBA title in 1994. The following code builds the frequency distribution of the variable <tt>MBA</tt>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">table</span>(forbes94<span class="op">$</span>MBA)</code></pre></div>
 <pre><code>
   0   1 
@@ -208,7 +208,7 @@ Figure 2.1: Example of pie chart with <tt>R</tt>.
 </p>
 </div>
 <p>The optional argument <tt>main</tt>, which takes the default value <tt>“”</tt> (that is, an empty text string), is used to add a title to the chart.</p>
-<p>As a last example of descriptive analysis carried out directly in <tt>R</tt>, we present the function <tt>boxplot()</tt>, which allows you to produce a box-plot for a single numerical variable. For example, the box-plot of the <tt>Salary</tt> variable is obtained as follows:</p>
+<p>As a last example of descriptive analysis carried out directly in <tt>R</tt>, we present the function <tt>boxplot()</tt>, which allows us to produce a box-plot for a single numerical variable. For example, the box-plot of the <tt>Salary</tt> variable is obtained as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">boxplot</span>(forbes94<span class="op">$</span>Salary)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:boxplot"></span>
 <img src="R_manual_files/figure-html/boxplot-1.pdf" alt="Example of box-plot with &lt;tt&gt;R&lt;/tt&gt;." width="480" />

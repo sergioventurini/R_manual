@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-18">
+<meta name="date" content="2018-07-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -207,7 +207,7 @@ Figure 1.17: Excel file import procedure in <tt>RStudio</tt>.
 <p>As an exercise, try repeating the procedure by importing the text file <tt>Forbes94.csv</tt>.</p>
 <p>To save one or more objects, we can use the <tt>save()</tt> function, which requires to specify the objects to be saved by indicating their names within quotes, as well as the argument <tt>file</tt>, that provides the name of the file where the objects will be saved. The following code saves the <tt>x</tt>, <tt>txt</tt> and <tt>A</tt> objects previously created in the <tt>attempt.RData</tt> file within the current directory:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">save</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;txt&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="dt">file =</span> <span class="st">&quot;attempt.RData&quot;</span>)</code></pre></div>
-<p>In <tt>Radiant</tt> you can load and save files from the <tt>Data</tt> screen. To load a file, you must first select the file format in the <tt>Load data of type</tt> box and then click on the <tt>Browse</tt> button to select the file. <tt>Radiant</tt> allows you to load files only in <tt>.RData</tt>, <tt>.rds</tt> and <tt>.csv</tt> formats. If the selected <tt>.RData</tt> file contains more than one object, <tt>Radiant</tt> will throw an error.</p>
+<p>In <tt>Radiant</tt> you can load and save files from the <tt>Data</tt> screen. To load a file, you must first select the file format in the <tt>Load data of type</tt> box and then click on the <tt>Browse</tt> button to select the file. <tt>Radiant</tt> allows us to load files only in <tt>.RData</tt>, <tt>.rds</tt> and <tt>.csv</tt> formats. If the selected <tt>.RData</tt> file contains more than one object, <tt>Radiant</tt> will throw an error.</p>
 <p>To save the active data frame in <tt>Radiant</tt>, you must first choose the format in the <tt>Save data to type</tt> box (the available formats are the same as those for loading) and then press the <tt>Save button</tt>. This procedure will save the active data set in a file with the same name as the data set in the current working directory.</p>
 
 </div>

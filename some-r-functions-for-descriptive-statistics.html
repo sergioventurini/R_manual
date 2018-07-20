@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-18">
+<meta name="date" content="2018-07-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -354,7 +354,7 @@ Figure 6.7: Example of box-plot with <tt>R</tt>.
  $ out  : num [1:18] 1750000 1400000 1500000 1375000 2000000 ...
  $ group: num [1:18] 1 1 1 1 1 1 1 1 1 1 ...
  $ names: chr &quot;1&quot;</code></pre>
-<p>As you see, <tt>bp_out</tt> is a list containing 6 elements (i.e. other objects), including <tt>stats</tt>, which contains the values of the 5 indices needed to build the box-plot (minimum, first quartile , median, third quartile and maximum), and <tt>out</tt>, the vector of outliers. Therefore, we can conclude that the <tt>Salary</tt> distribution has 18 outliers:</p>
+<p>As you see, <tt>bp_out</tt> is a list containing 6 elements (i.e. other objects), including <tt>stats</tt>, which contains the values of the 5 indices needed to build the box-plot (minimum, first quartile, median, third quartile and maximum), and <tt>out</tt>, the vector of outliers. Therefore, we can conclude that the <tt>Salary</tt> variable has 18 outliers:</p>
 <pre><code> [1] 1750000 1400000 1500000 1375000 2000000 1900000 1250000 1483500
  [9] 1454000 2633570 1240000 1841000 1231730 2667730 2700000 1525000
 [17] 1397810 1504940</code></pre>
@@ -363,13 +363,13 @@ Figure 6.7: Example of box-plot with <tt>R</tt>.
 <h5><span class="header-section-number">6.1.1.2.5</span> Summary indices</h5>
 <p>The main functions available in <tt>R</tt> for the calculation of summary indices for a numeric variable are:</p>
 <ul>
-<li><tt>min()</tt>, for the calculation of the minimum observed value</li>
-<li><tt>max()</tt>, for the calculation of the maximum observed value</li>
-<li><tt>mean()</tt>, for the calculation of the sample mean</li>
-<li><tt>median()</tt>, for the calculation of the sample median</li>
-<li><tt>var()</tt>, for the calculation of the sample variance</li>
-<li><tt>sd()</tt>, for the calculation of the sample standard deviation</li>
-<li><tt>quantile()</tt>, for the calculation of the sample quantiles</li>
+<li><tt>min()</tt> returns the minimum observed value</li>
+<li><tt>max()</tt> returns the maximum observed value</li>
+<li><tt>mean()</tt> returns the sample mean</li>
+<li><tt>median()</tt> returns the sample median</li>
+<li><tt>var()</tt> returns the sample variance</li>
+<li><tt>sd()</tt> returns the sample standard deviation</li>
+<li><tt>quantile()</tt> returns the sample quantiles</li>
 <li><tt>summary()</tt>, which automatically provides a list with some of the above mentioned indices</li>
 </ul>
 <p>If the variable contains missing values (i.e. <tt>NA</tt>), all these functions except from <tt>summary()</tt> require the <tt>na.rm</tt> argument to be set to <tt>TRUE</tt>, with which we tell to <tt>R</tt> to remove the missing data internally (but not from the data set) before computing the indices. Let’s see an example using the <tt>Salary</tt> variable:</p>
@@ -470,7 +470,7 @@ Other  0.05355646 0.2858324 0.3341616 1.00000000</code></pre>
 <p>The Pareto diagram is a graphical representation useful for separating the modalities of a categorical variable that have been observed more frequently from the less frequent ones. Unfortunately, there is no function in the basic <tt>R</tt> packages that produce a Pareto diagram. However, it is possible to download and install an additional package, called <tt>qcc</tt>, which contains some functions dedicated to the statistical quality control in production, which also includes a function to draw the Pareto diagram. We can install the package by following the instructions in Section <a href="packages.html#packages">1.5</a>, or alternatively by running the following code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">install.packages</span>(<span class="st">&quot;qcc&quot;</span>)   <span class="co"># download the qcc package</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">library</span>(qcc)              <span class="co"># load the qcc package</span></code></pre></div>
-<p>The <tt>qcc</tt> package contains a function called <tt>pareto.chart()</tt> that allows you to directly produce the Pareto diagram. This function requires a numeric vector with the absolute frequencies with which the various categories have been observed. To obtain a more informative graph, we also recommend to assign names to the elements of the vector, which will be shown on the horizontal axis of the graph. The following code first loads some data contained in the data frame <tt>pareto_dat</tt>, which correspond to the number of defective pieces detected in a company (column <tt>Total</tt>), together with the corresponding cause of defect (column <tt>Cause</tt>), and then use this data to construct the Pareto diagram:</p>
+<p>The <tt>qcc</tt> package contains a function called <tt>pareto.chart()</tt> that allows us to directly produce the Pareto diagram. This function requires a numeric vector with the absolute frequencies with which the various categories have been observed. To obtain a more informative graph, we also recommend to assign names to the elements of the vector, which will be shown on the horizontal axis of the graph. The following code first loads some data contained in the data frame <tt>pareto_dat</tt>, which correspond to the number of defective pieces detected in a company (column <tt>Total</tt>), together with the corresponding cause of defect (column <tt>Cause</tt>), and then use this data to construct the Pareto diagram:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">load</span>(<span class="st">&quot;pareto_data.RData&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span>pdat &lt;-<span class="st"> </span>pareto_dat<span class="op">$</span>Total
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">names</span>(pdat) &lt;-<span class="st"> </span>pareto_dat<span class="op">$</span>Cause
@@ -513,10 +513,10 @@ Figure 6.11: Example of time series plot.
 </p>
 </div>
 </div>
-<div id="how-to-check-if-a-variable-is-distributed-according-to-a-normal" class="section level4">
-<h4><span class="header-section-number">6.1.3.3</span> How to check if a variable is distributed according to a normal</h4>
+<div id="how-to-check-if-a-variable-is-normally-distributed" class="section level4">
+<h4><span class="header-section-number">6.1.3.3</span> How to check if a variable is normally distributed</h4>
 <p>Many statistical models require that the reference population is distributed according to a normal distribution. Therefore, it is necessary to verify that this assumption is at least approximately satisfied by the sample data we are analysing otherwise the results we obtain may be biased and unreliable.</p>
-<p>A simple but effective tool for verifying the normality of a distribution of a numeric set of data is the <em>normal probability plot</em>, which can be created in <tt>R</tt> through the <tt>qqnorm()</tt> function. This function requires only the variable to analyse, while other arguments are available to improve the appearance of the graph (<tt>main</tt>, <tt>xlab</tt>, <tt>ylab</tt>, <tt>col</tt>, etc. .).</p>
+<p>A simple but effective graphical tool for verifying the normality of a distribution of a numeric set of data is the <em>normal probability plot</em>, which can be created in <tt>R</tt> through the <tt>qqnorm()</tt> function. This function requires only the variable to analyse, while other arguments are available to improve the appearance of the graph (<tt>main</tt>, <tt>xlab</tt>, <tt>ylab</tt>, <tt>col</tt>, etc. .).</p>
 <p>After executing <tt>qqnorm()</tt>, the <tt>qqline()</tt> function allows adding a line to the chart that helps in evaluating the proximity of the empirical distribution of the data to the normal distribution. The <tt>qqline()</tt> function also requires the name of the variable being analysed.</p>
 <p>The following code generates the normal probability plot for the <tt>Salary</tt> variable:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">qqnorm</span>(forbes94<span class="op">$</span>Salary, <span class="dt">main =</span> <span class="st">&quot;Normal probability plot for Salary&quot;</span>)

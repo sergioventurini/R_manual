@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-18">
+<meta name="date" content="2018-07-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -192,7 +192,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="the-multiple-linear-regression-model" class="section level2">
 <h2><span class="header-section-number">5.2</span> The multiple linear regression model</h2>
-<p>In most applications there are many variables available in the data set that can help explaining the observed values of the dependent variable so as to obtain models with a better predictive ability. The tool typically used in these cases is the <em>multiple</em> linear regression model, which differs from the simple one because it allows to include any number of predictors in the model. The multiple linear regression model is defined as</p>
+<p>In most applications there are many variables available in the data set that can help explaining the observed values of the dependent variable, which might allow obtaining models with a better predictive ability. The tool typically used in these cases is the <em>multiple</em> linear regression model, which differs from the simple one because it allows to include any number of predictors in the model. The multiple linear regression model is defined as</p>
 <span class="math display" id="eq:linreg-multiple">\[\begin{equation}
 Y_i = \beta_0 + \beta_1 x_{1i} + \beta_2 x_{2i} + \cdots + \beta_K x_{Ki} + \varepsilon_i, \quad i=1,\ldots,n,
 \tag{5.4}
@@ -201,9 +201,9 @@ Y_i = \beta_0 + \beta_1 x_{1i} + \beta_2 x_{2i} + \cdots + \beta_K x_{Ki} + \var
 <ol style="list-style-type: decimal">
 <li>the <span class="math inline">\(x_{ji}\)</span> terms are fixed numbers, or they are realizations of a random variable <span class="math inline">\(X_j\)</span> (<span class="math inline">\(j=1,\ldots,K\)</span>), that are independent of the error terms, <span class="math inline">\(\varepsilon_i\)</span>. In the latter case, inference is carried out conditionally to the observed values of <span class="math inline">\(X_j\)</span></li>
 <li>the error terms, <span class="math inline">\(\varepsilon_i\)</span>, are random variables with mean 0 and variance <span class="math inline">\(\sigma^2\)</span> which is constant for every <span class="math inline">\(i=1,\ldots,n\)</span> (homoskedasticity)</li>
-<li>the error terms, <span class="math inline">\(\varepsilon_i\)</span>, are not correlated with one another</li>
+<li>the error terms, <span class="math inline">\(\varepsilon_i\)</span>, are uncorrelated with each another</li>
 <li>there are no linear relationships between the predictor variables</li>
-<li>the random error terms, <span class="math inline">\(\varepsilon_i\)</span>, are distributed according to a normal distribution</li>
+<li>the random error terms, <span class="math inline">\(\varepsilon_i\)</span>, are normally distributed</li>
 </ol>
 <p>The functions available in <tt>R</tt> to estimate and analyse a multiple linear regression model are exactly the same as those presented in Section <a href="simple-reg.html#simple-reg">5.1</a>, except that now the formula to be specified within the <tt>lm()</tt> will use more than one variable to the right of the tilde symbol. The independent variables that we want to include in the model must be added one after the other using the <tt>+</tt> symbol. For example, to generalize the simple linear regression model <tt>comp_m1</tt> presented above, we now also include the variables related to the competitors’ prices:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>comp_m2 &lt;-<span class="st"> </span><span class="kw">lm</span>(mktshare <span class="op">~</span><span class="st"> </span>ownprice <span class="op">+</span><span class="st"> </span>comp1price <span class="op">+</span><span class="st"> </span>comp2price, <span class="dt">data =</span> comp)

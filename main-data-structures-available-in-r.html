@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-18">
+<meta name="date" content="2018-07-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -221,11 +221,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="op">&gt;</span><span class="st"> </span>w</code></pre></div>
 <pre><code>[1] 10 -1  5</code></pre>
 <p>Notice how in this case we extracted a subset of elements, the result of which was immediately stored in a new object that we called <tt>w</tt>. In <tt>R</tt> it is quite common, in fact, to create new objects as a result of some operation on existing objects.</p>
-<p>We can indicate which elements to extract also through the verification of logical conditions. For example, the following code extracts only the elements from <tt>x</tt>:</p>
+<p>We can indicate the elements to extract also through the verification of logical conditions. For example, the following code extracts only the even elements from <tt>x</tt>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>x[(x <span class="op">%%</span><span class="st"> </span><span class="dv">2</span>) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>]</code></pre></div>
 <pre><code>[1] 10 -2</code></pre>
 <p>Note that in this example we used two new operators, the <tt>%%</tt> operator which returns the remainder of the division by the number on the right of the operator (in this case, the rest of the division of each element in <tt>x</tt> by 2), and the logical operator <tt>==</tt>, which instead checks if the left side is equal to the right one and returns the logical values <tt>TRUE</tt> or <tt>FALSE</tt> as appropriate<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a>. We also take this opportunity to emphasize that <tt>R</tt> automatically applies the various operations to all elements of a vector.</p>
-<p>It is possible to assign names to the elements of a vector through the <tt>names()</tt> function. This allows you to refer to the elements of the vector through their names instead of their positions:</p>
+<p>It is possible to assign names to the elements of a vector through the <tt>names()</tt> function. This allows us to refer to the elements of the vector through their names instead of their positions:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>x</code></pre></div>
 <pre><code>[1] 10.0 -2.0  0.3 -1.0  5.0</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">names</span>(x) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>)
@@ -387,11 +387,11 @@ c -3 0.9</code></pre>
 <ul>
 <li>the body of the function, or the code it contains</li>
 <li>the environment in which the function is evaluated</li>
-<li>the list of arguments, that is the function inputs</li>
+<li>the list of arguments, that are the function inputs</li>
 </ul>
 <p>We skip the details on the first two elements, since we will not need them in the rest of the course, while we give some more information on the list of arguments.</p>
 <p>As we already mentioned, the task of each function is to take a list of arguments in input, use these inputs to perform a series of calculations/operations and then return an output. Some functions return a numerical output, others a graphical output, others do not return anything but produce secondary effects. For example, the <tt>rownames()</tt> and <tt>colnames()</tt> functions produce no visible results, but they modify the names of the rows and columns of a matrix or data frame. As we have already verified in some examples, the output of a function can be stored in a new object, so that it can be retrieved later without having to perform the calculations again.</p>
-<p>Of the three elements listed above, the most important one for our purposes is the list of arguments. Except for a few cases, such as the <tt>str()</tt> function, virtually all functions require one or more arguments. In case it is necessary to indicate many arguments, these must be separated by a comma (see the example on the function <tt>matrix()</tt> in Section <a href="main-data-structures-available-in-r.html#matrix">1.3.3</a>).</p>
+<p>As we said, the most important function element for our purposes is the list of arguments. Except for a few cases, such as the <tt>str()</tt> function, virtually all functions require one or more arguments. In case it is necessary to indicate many arguments, these must be separated by a comma (see the example on the function <tt>matrix()</tt> in Section <a href="main-data-structures-available-in-r.html#matrix">1.3.3</a>).</p>
 <p>We can retrieve the complete list of arguments of a function with <tt>args()</tt>. For example, for the <tt>var()</tt> function, which calculates the sample variance of a set of numeric data, we obtain</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">args</span>(var)</code></pre></div>
 <pre><code>function (x, y = NULL, na.rm = FALSE, use) 
@@ -423,10 +423,10 @@ NULL</code></pre>
 <hr />
 <ol start="12">
 <li id="fn12"><p><tt>R</tt> also distinguishes between integers (<tt>int</tt>) and real numbers (<tt>num</tt>), but this distinction has no implication from our point of view.<a href="main-data-structures-available-in-r.html#fnref12">↩</a></p></li>
-<li id="fn13"><p>The <tt>==</tt> operator is not to be confused with the equals sign (<tt>=</tt>).<a href="main-data-structures-available-in-r.html#fnref13">↩</a></p></li>
+<li id="fn13"><p>The <tt>==</tt> logical operator is not to be confused with the equals sign (<tt>=</tt>).<a href="main-data-structures-available-in-r.html#fnref13">↩</a></p></li>
 <li id="fn14"><p>Here, we only anticipate that the arguments of a function are divided into mandatory and optional. The optional arguments, such as <tt>byrow</tt> in the example below, assume a default value if they are not explicitly specified. The default values for the optional arguments of a function can be retrieved from the help page of the function itself (see Section <a href="howtogethelp.html#howtogethelp">1.4</a>).<a href="main-data-structures-available-in-r.html#fnref14">↩</a></p></li>
-<li id="fn15"><p>The <tt>#</tt> character allows you to insert a comment, which is a text used to describe a piece of code, but which will not be executed by <tt>R</tt>.<a href="main-data-structures-available-in-r.html#fnref15">↩</a></p></li>
-<li id="fn16"><p>One way to refer directly to the <tt>income</tt> column without having to specify the data frame that contains it, consists in using the <tt>attach()</tt> function, which makes the columns of a data frame available as independent objects during the current working session (the <tt>detach()</tt> function allows you to go back in this process). However, <tt>attach()</tt> should be used with extreme caution because different data frames may contain variables with the same name. For this reason, we will not use it further in this manual.<a href="main-data-structures-available-in-r.html#fnref16">↩</a></p></li>
+<li id="fn15"><p>The <tt>#</tt> character allows us to insert a comment, which is a text used to describe a piece of code, but which will not be executed by <tt>R</tt>.<a href="main-data-structures-available-in-r.html#fnref15">↩</a></p></li>
+<li id="fn16"><p>One way to refer directly to the <tt>income</tt> column without having to specify the data frame that contains it, consists in using the <tt>attach()</tt> function, which makes the columns of a data frame available as independent objects during the current working session (the <tt>detach()</tt> function allows us to go back in this process). However, <tt>attach()</tt> should be used with extreme caution because different data frames may contain variables with the same name. For this reason, we will not use it further in this manual.<a href="main-data-structures-available-in-r.html#fnref16">↩</a></p></li>
 <li id="fn17"><p>Not specifying the <tt>na.rm</tt> argument in presence of missing data results in a <tt>NA</tt>. This is the expected way in <tt>R</tt> to make us aware that a variable contains missing data.<a href="main-data-structures-available-in-r.html#fnref17">↩</a></p></li>
 <li id="fn18"><p>If we used the single square brackets, instead of extracting the contents of the selected list element directly we would still get a list but with a single element corresponding to the selected element. If this explanation does not convince you, try running the code <tt>str(X[1])</tt>.<a href="main-data-structures-available-in-r.html#fnref18">↩</a></p></li>
 <li id="fn19"><p>The <tt>y</tt> argument of <tt>var()</tt> takes the default value <tt>NULL</tt>, which in <tt>R</tt> indicates an empty object containing nothing.<a href="main-data-structures-available-in-r.html#fnref19">↩</a></p></li>

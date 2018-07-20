@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-18">
+<meta name="date" content="2018-07-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -233,11 +233,11 @@ mean of x
 <li><tt>n</tt>, sample size</li>
 <li><tt>p</tt>, value of the proportion <span class="math inline">\(p_0\)</span> that we want to test under the null hypothesis</li>
 <li><tt>alternative</tt>, the type of test we want to perform, that is, if two-sided (<tt>two.sided</tt>) or one-sided (<tt>less</tt> or <tt>greater</tt>, depending on the direction in <span class="math inline">\(H_1\)</span>)</li>
-<li><tt>conf.level</tt>, the confidence level you want to use</li>
-<li><tt>correct</tt>, with which you can indicate to <tt>R</tt> whether the so-called Yates correction must be used; this correction has not been presented during the course so we will always set its value to <tt>FALSE</tt></li>
+<li><tt>conf.level</tt>, the confidence level we want to use</li>
+<li><tt>correct</tt>, with which we can indicate to <tt>R</tt> whether the so-called Yates correction must be used; this correction has not been presented during the course so we will always set its value to <tt>FALSE</tt></li>
 </ul>
 <p>Also the <tt>prop.test()</tt> function automatically calculates both the confidence interval and the proportion test.</p>
-<p>Suppose we want to estimate the proportion of CEO with an MBA in the reference population using the sample available in the data frame <tt>forbes94</tt>. In addition, we also want to calculate the corresponding 99% confidence interval and test the null hypothesis that the proportion of CEO having an MBA in the population is equal to 30%. The following code allows you to perform all these analyses:</p>
+<p>Suppose we want to estimate the proportion of CEO with an MBA in the reference population using the sample available in the data frame <tt>forbes94</tt>. In addition, we also want to calculate the corresponding 99% confidence interval and test the null hypothesis that the proportion of CEO having an MBA in the population is equal to 30%. The following code allows us to perform these analyses:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">prop.test</span>(<span class="dt">x =</span> <span class="kw">sum</span>(forbes94<span class="op">$</span>MBA <span class="op">==</span><span class="st"> &quot;1&quot;</span>), <span class="dt">n =</span> <span class="kw">nrow</span>(forbes94), <span class="dt">p =</span> <span class="fl">0.3</span>,
 <span class="op">+</span><span class="st">   </span><span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level =</span> <span class="fl">0.99</span>, <span class="dt">correct =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <pre><code>

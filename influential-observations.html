@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-18">
+<meta name="date" content="2018-07-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -205,7 +205,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 Figure 5.4: Plot of standardized residuals for model <tt>comp_m2</tt>.
 </p>
 </div>
-<p>Note that in the <tt>plot()</tt> function we used the argument <tt>type = “n”</tt> (which stands for “nothing”), which allows you to prepare the axes of the graph, but not to draw the points. These are added with the next code line through the <tt>text()</tt> function, which superimposes a text label in correspondence of the point coordinates (<tt>x = stdres</tt>). In this example, the text labels used are the row numbers (<tt>labels = 1:nrow(comp)</tt>). This allows to identify directly from the graph the observations with a particularly large standardized residual (in absolute value). The thresholds beyond which the observations are usually classified as outliers are -2 and +2 (these values are added to the graph by means of the <tt>abline()</tt> function). In this case there are 7 outliers, namely observation number 2, 3, 45, 71, 89, 103 and 113.</p>
+<p>Note that in the <tt>plot()</tt> function we used the argument <tt>type = “n”</tt> (which stands for “nothing”), which allows us to prepare the axes of the graph, but not to draw the points. These are added with the next code line through the <tt>text()</tt> function, which superimposes a text label in correspondence of the point coordinates (<tt>x = stdres</tt>). In this example, the text labels used are the row numbers (<tt>labels = 1:nrow(comp)</tt>). This allows to identify directly from the graph the observations with a particularly large standardized residual (in absolute value). The thresholds beyond which the observations are usually classified as outliers are -2 and +2 (these values are added to the graph by means of the <tt>abline()</tt> function). In this case there are 7 outliers, namely observation number 2, 3, 45, 71, 89, 103 and 113.</p>
 <p>The following code calculates and produces the leverage plot for the same model:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>lev &lt;-<span class="st"> </span><span class="kw">hatvalues</span>(comp_m2)
 <span class="op">&gt;</span><span class="st"> </span>lev_thr &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">*</span><span class="kw">mean</span>(lev)

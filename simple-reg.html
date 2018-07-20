@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-18">
+<meta name="date" content="2018-07-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -201,8 +201,8 @@ Y_i = \beta_0 + \beta_1 x_i + \varepsilon_i, \quad i=1,\ldots,n,
 <ol style="list-style-type: decimal">
 <li>the <span class="math inline">\(x_i\)</span> values are fixed numbers, or they are realizations of a random variable <span class="math inline">\(X\)</span> that is independent of the errors terms, <span class="math inline">\(\varepsilon_i\)</span>. In the latter case inference is carried out conditionally on the observed values of <span class="math inline">\(X\)</span></li>
 <li>the error terms, <span class="math inline">\(\varepsilon_i\)</span>, are random variables with mean 0 and variance <span class="math inline">\(\sigma^2\)</span> which is constant for every <span class="math inline">\(i=1,\ldots,n\)</span> (homoskedasticity)</li>
-<li>the random error terms, <span class="math inline">\(\varepsilon_i\)</span>, are not correlated with one another</li>
-<li>the random errors, <span class="math inline">\(\varepsilon_i\)</span>, are distributed according to a normal distribution</li>
+<li>the random error terms, <span class="math inline">\(\varepsilon_i\)</span>, are uncorrelated with each another</li>
+<li>the random errors, <span class="math inline">\(\varepsilon_i\)</span>, are normally distributed</li>
 </ol>
 <p>The main function for estimating a linear regression model in <tt>R</tt> is <tt>lm()</tt>, which stands for <em>linear model</em>. The first argument of this function is a type of object we never encountered so far called a <em>formula</em>. Formula objects are used in <tt>R</tt> to specify a relationship between a dependent variable <tt>y</tt> and one (or more) independent variables <tt>x</tt>. To specify a formula object it is necessary to use a special symbol, the tilde “<tt><span class="math inline">\(\sim\)</span></tt>”, which is not always easy to retrieve on the Italian keyboards<a href="#fn41" class="footnoteRef" id="fnref41"><sup>41</sup></a>. The particular combination of keys that you need to use to get this symbol depends on the operating system (Mac, Windows, etc.), the type of machine you are using (laptops, desktops, etc.), as well as the particular brand of your machine. For this reason, it is not possible to indicate here unequivocally how to obtain the tilde on your particular computer, but we suggest an unpretentious but very simple way to get it: execute the code <tt>?tilde</tt>, copy the tilde character in the help page and paste it where you need it<a href="#fn42" class="footnoteRef" id="fnref42"><sup>42</sup></a>.</p>
 <p>The general syntax of the <tt>lm()</tt> function is</p>
@@ -279,7 +279,7 @@ ownprice    -0.06306539 -0.02757108</code></pre>
 <li><tt>residuals()</tt>, which calculates the model residuals</li>
 <li><tt>fitted()</tt>, which calculates the predicted values of the model only for the observations included in the sample</li>
 <li><tt>anova()</tt>, which produces the deviance decomposition</li>
-<li><tt>predict()</tt>, which allows you to calculate predictions</li>
+<li><tt>predict()</tt>, which allows us to calculate predictions</li>
 </ul>
 <p>Leaving aside for the moment <tt>predict()</tt>, to which we dedicate a subsequent section of the chapter, we now see the type of output produced by the other functions mentioned above:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">coef</span>(comp_m1)</code></pre></div>
@@ -305,7 +305,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 Figure 5.2: Plot of residuals versus predicted values for model <tt>comp_m1</tt>.
 </p>
 </div>
-<p>The <tt>h</tt> and <tt>lty</tt> options in the previous code allow to draw an horizontal line (in correspondence of the value 0 on the vertical axis) and to choose the line type (the value 2 indicates a dotted line) respectively.</p>
+<p>The <tt>h</tt> and <tt>lty</tt> options in the previous code allow us to draw an horizontal line (in correspondence of the value 0 on the vertical axis) and to choose the line type (the value 2 indicates a dotted line) respectively.</p>
 </div>
 <div class="footnotes">
 <hr />

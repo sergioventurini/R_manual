@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-18">
+<meta name="date" content="2018-07-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -198,7 +198,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><tt>object</tt>, which is the object returned by the <tt>lm()</tt> function containing the estimation results</li>
 <li><tt>newdata</tt>, which refers to a new data frame containing the values of the independent variables to use in the calculation of the predictions</li>
 <li><tt>interval</tt>, which can take only three possible values, that is <tt>confidence</tt> if we want to calculate the confidence intervals for the prediction of the mean value, <tt>prediction</tt> if we want to calculate the prediction intervals for individual values, <tt>none</tt> if no interval is to be calculated</li>
-<li><tt>level</tt>, which allows you to specify the confidence level for the confidence or prediction intervals</li>
+<li><tt>level</tt>, which allows us to specify the confidence level for the confidence or prediction intervals</li>
 </ul>
 <p>Attention should be paid in using the <tt>predict()</tt> function, especially in correctly specifying the <tt>newdata</tt> data frame. This data frame can contain an arbitrary number of lines, each of which refers to a scenario (that is, a combination of values of independent variables) in correspondence to which the prediction is to be calculated, but it must contain the same number of columns as those included in the model. The columns of <tt>newdata</tt> must be named with the same names as the variables included in the model. If variable names do not match, <tt>R</tt> will not be able to associate the variables included in the model with those provided in the <tt>newdata</tt> data frame. For example, suppose that, with reference to the model <tt>comp_m2</tt>, we are interested in calculating the predictions and the corresponding 95% prediction intervals for the following two scenarios<a href="#fn45" class="footnoteRef" id="fnref45"><sup>45</sup></a>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>data_for_predict &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ownprice =</span> <span class="kw">c</span>(<span class="fl">1.60</span>, <span class="fl">1.80</span>),
@@ -214,7 +214,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>         fit        lwr        upr
 1 0.03019360 0.01020255 0.05018465
 2 0.03298414 0.01296260 0.05300567</code></pre>
-<p>The output returned by <tt>predict()</tt> consists of a matrix with two rows corresponding to the two scenarios and three columns containing the predictions (<tt>fit</tt>) and the prediction interval boundaries (<tt>lwr</tt> respectively) and <tt>upr</tt>).</p>
+<p>The output returned by <tt>predict()</tt> consists of a matrix with two rows corresponding to the two scenarios and three columns containing the predictions (<tt>fit</tt>) and the prediction interval boundaries (<tt>lwr</tt> and <tt>upr</tt>).</p>
 </div>
 <div class="footnotes">
 <hr />
