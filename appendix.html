@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>An introduction to R and Radiant for a first course in Statistics</title>
   <meta name="description" content="Short manual for learning some elements of R and Radiant. This is a piece of material of the course 30001 (Statistics) at Bocconi University.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="An introduction to R and Radiant for a first course in Statistics" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:url" content="https://sergioventurini.github.io/R_manual" />
   
   <meta property="og:description" content="Short manual for learning some elements of R and Radiant. This is a piece of material of the course 30001 (Statistics) at Bocconi University." />
   <meta name="github-repo" content="sergioventurini/R_manual" />
@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-20">
+<meta name="date" content="2018-07-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,12 +33,12 @@
   
 <link rel="prev" href="influential-observations.html">
 <link rel="next" href="some-r-functions-for-descriptive-statistics.html">
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
 
 
 
@@ -46,6 +46,11 @@
 
 
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { TagSide: "left" }
+});
+</script>
 
 
 <style type="text/css">
@@ -99,7 +104,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">An introduction to <tt>R</tt> and <tt>Radiant</tt></a></li>
+<li><a href="./">An introduction to R and Radiant</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
@@ -108,8 +113,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1.1" data-path="software-installation.html"><a href="software-installation.html#installation-under-windows"><i class="fa fa-check"></i><b>1.1.1</b> Installation under Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="software-installation.html"><a href="software-installation.html#installation-under-mac"><i class="fa fa-check"></i><b>1.1.2</b> Installation under Mac</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="the-r-approach-to-statistics.html"><a href="the-r-approach-to-statistics.html"><i class="fa fa-check"></i><b>1.2</b> The <tt>R</tt> approach to statistics</a></li>
-<li class="chapter" data-level="1.3" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Main data structures available in <tt>R</tt></a><ul>
+<li class="chapter" data-level="1.2" data-path="the-r-approach-to-statistics.html"><a href="the-r-approach-to-statistics.html"><i class="fa fa-check"></i><b>1.2</b> The R approach to statistics</a></li>
+<li class="chapter" data-level="1.3" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Main data structures available in R</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#basic-data-types"><i class="fa fa-check"></i><b>1.3.1</b> Basic data types</a></li>
 <li class="chapter" data-level="1.3.2" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#vettori"><i class="fa fa-check"></i><b>1.3.2</b> Vectors</a></li>
 <li class="chapter" data-level="1.3.3" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#matrix"><i class="fa fa-check"></i><b>1.3.3</b> Matrices</a></li>
@@ -118,14 +123,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.3.6" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#lists"><i class="fa fa-check"></i><b>1.3.6</b> Lists</a></li>
 <li class="chapter" data-level="1.3.7" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#funzioni"><i class="fa fa-check"></i><b>1.3.7</b> Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> How to get help on <tt>R</tt> commands</a></li>
-<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> <tt>R</tt> packages</a></li>
-<li class="chapter" data-level="1.6" data-path="the-rstudio-application.html"><a href="the-rstudio-application.html"><i class="fa fa-check"></i><b>1.6</b> The <tt>RStudio</tt> application</a></li>
-<li class="chapter" data-level="1.7" data-path="the-radiant-package.html"><a href="the-radiant-package.html"><i class="fa fa-check"></i><b>1.7</b> The <tt>Radiant</tt> package</a></li>
-<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> How to load and save a file in <tt>R</tt> and <tt>Radiant</tt></a></li>
+<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> How to get help on R commands</a></li>
+<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> R packages</a></li>
+<li class="chapter" data-level="1.6" data-path="the-rstudio-application.html"><a href="the-rstudio-application.html"><i class="fa fa-check"></i><b>1.6</b> The RStudio application</a></li>
+<li class="chapter" data-level="1.7" data-path="the-radiant-package.html"><a href="the-radiant-package.html"><i class="fa fa-check"></i><b>1.7</b> The Radiant package</a></li>
+<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> How to load and save a file in R and Radiant</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>2</b> Descriptive statistics</a><ul>
-<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> First examples with <tt>R</tt></a></li>
+<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> First examples with R</a></li>
 <li class="chapter" data-level="2.2" data-path="univariate-descriptive-analysis.html"><a href="univariate-descriptive-analysis.html"><i class="fa fa-check"></i><b>2.2</b> Univariate descriptive analysis</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="univariate-descriptive-analysis.html"><a href="univariate-descriptive-analysis.html#a-single-categorical-variable"><i class="fa fa-check"></i><b>2.2.1</b> A single categorical variable</a></li>
 <li class="chapter" data-level="2.2.2" data-path="univariate-descriptive-analysis.html"><a href="univariate-descriptive-analysis.html#a-single-numerical-variable"><i class="fa fa-check"></i><b>2.2.2</b> A single numerical variable</a></li>
@@ -158,12 +163,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.4" data-path="influential-observations.html"><a href="influential-observations.html"><i class="fa fa-check"></i><b>5.4</b> Influential observations</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendix</a><ul>
-<li class="chapter" data-level="6.1" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html"><i class="fa fa-check"></i><b>6.1</b> Some <tt>R</tt> functions for descriptive statistics</a><ul>
+<li class="chapter" data-level="6.1" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html"><i class="fa fa-check"></i><b>6.1</b> Some R functions for descriptive statistics</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html#univariate-descriptive-analyses"><i class="fa fa-check"></i><b>6.1.1</b> Univariate descriptive analyses</a></li>
 <li class="chapter" data-level="6.1.2" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html#bivariate-descriptive-analyses-1"><i class="fa fa-check"></i><b>6.1.2</b> Bivariate descriptive analyses</a></li>
 <li class="chapter" data-level="6.1.3" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html#further-graphical-representations"><i class="fa fa-check"></i><b>6.1.3</b> Further graphical representations</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html"><i class="fa fa-check"></i><b>6.2</b> Some <tt>R</tt> functions for inferential statistics</a><ul>
+<li class="chapter" data-level="6.2" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html"><i class="fa fa-check"></i><b>6.2</b> Some R functions for inferential statistics</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html#inference-on-the-mean-of-a-normal-population-1"><i class="fa fa-check"></i><b>6.2.1</b> Inference on the mean of a normal population</a></li>
 <li class="chapter" data-level="6.2.2" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html#inference-on-the-proportion-of-successes-in-a-bernoulli-population-1"><i class="fa fa-check"></i><b>6.2.2</b> Inference on the proportion of successes in a Bernoulli population</a></li>
 <li class="chapter" data-level="6.2.3" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html#inference-on-the-comparison-between-the-means-of-two-normal-populations-1"><i class="fa fa-check"></i><b>6.2.3</b> Inference on the comparison between the means of two normal populations</a></li>
@@ -182,7 +187,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>An introduction to <tt>R</tt> and <tt>Radiant</tt> for a first course in Statistics</strong></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An introduction to R and Radiant for a first course in Statistics</a>
           </h1>
         </div>
 
@@ -192,7 +197,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="appendix" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Appendix</h1>
-<p>In this appendix we present some more in-depth presentation not required for the course 30001 (Statistics), but which allow to get more detailed outputs than those provided by <tt>Radiant</tt>. These additional information can be useful for future courses in which <tt>R</tt> is used or for analysis of data sets related to the “triennio” final project as well as the “biennio” thesis.</p> 
+<p>In this appendix we present some more in-depth presentation not required for the course 30001 (Statistics), but which allow to get more detailed outputs than those provided by Radiant. These additional information can be useful for future courses in which R is used or for analysis of data sets related to the “triennio” final project as well as the “biennio” thesis.</p> 
 </div>
             </section>
 
@@ -203,18 +208,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <a href="some-r-functions-for-descriptive-statistics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": true,
+"github": false,
 "facebook": false,
 "twitter": true,
 "google": false,

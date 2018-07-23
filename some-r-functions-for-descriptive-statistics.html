@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>An introduction to R and Radiant for a first course in Statistics</title>
   <meta name="description" content="Short manual for learning some elements of R and Radiant. This is a piece of material of the course 30001 (Statistics) at Bocconi University.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="An introduction to R and Radiant for a first course in Statistics" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:url" content="https://sergioventurini.github.io/R_manual" />
   
   <meta property="og:description" content="Short manual for learning some elements of R and Radiant. This is a piece of material of the course 30001 (Statistics) at Bocconi University." />
   <meta name="github-repo" content="sergioventurini/R_manual" />
@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-20">
+<meta name="date" content="2018-07-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,12 +33,12 @@
   
 <link rel="prev" href="appendix.html">
 <link rel="next" href="some-r-functions-for-inferential-statistics.html">
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
 
 
 
@@ -46,6 +46,11 @@
 
 
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { TagSide: "left" }
+});
+</script>
 
 
 <style type="text/css">
@@ -99,7 +104,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">An introduction to <tt>R</tt> and <tt>Radiant</tt></a></li>
+<li><a href="./">An introduction to R and Radiant</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
@@ -108,8 +113,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1.1" data-path="software-installation.html"><a href="software-installation.html#installation-under-windows"><i class="fa fa-check"></i><b>1.1.1</b> Installation under Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="software-installation.html"><a href="software-installation.html#installation-under-mac"><i class="fa fa-check"></i><b>1.1.2</b> Installation under Mac</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="the-r-approach-to-statistics.html"><a href="the-r-approach-to-statistics.html"><i class="fa fa-check"></i><b>1.2</b> The <tt>R</tt> approach to statistics</a></li>
-<li class="chapter" data-level="1.3" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Main data structures available in <tt>R</tt></a><ul>
+<li class="chapter" data-level="1.2" data-path="the-r-approach-to-statistics.html"><a href="the-r-approach-to-statistics.html"><i class="fa fa-check"></i><b>1.2</b> The R approach to statistics</a></li>
+<li class="chapter" data-level="1.3" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Main data structures available in R</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#basic-data-types"><i class="fa fa-check"></i><b>1.3.1</b> Basic data types</a></li>
 <li class="chapter" data-level="1.3.2" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#vettori"><i class="fa fa-check"></i><b>1.3.2</b> Vectors</a></li>
 <li class="chapter" data-level="1.3.3" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#matrix"><i class="fa fa-check"></i><b>1.3.3</b> Matrices</a></li>
@@ -118,14 +123,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.3.6" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#lists"><i class="fa fa-check"></i><b>1.3.6</b> Lists</a></li>
 <li class="chapter" data-level="1.3.7" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#funzioni"><i class="fa fa-check"></i><b>1.3.7</b> Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> How to get help on <tt>R</tt> commands</a></li>
-<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> <tt>R</tt> packages</a></li>
-<li class="chapter" data-level="1.6" data-path="the-rstudio-application.html"><a href="the-rstudio-application.html"><i class="fa fa-check"></i><b>1.6</b> The <tt>RStudio</tt> application</a></li>
-<li class="chapter" data-level="1.7" data-path="the-radiant-package.html"><a href="the-radiant-package.html"><i class="fa fa-check"></i><b>1.7</b> The <tt>Radiant</tt> package</a></li>
-<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> How to load and save a file in <tt>R</tt> and <tt>Radiant</tt></a></li>
+<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> How to get help on R commands</a></li>
+<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> R packages</a></li>
+<li class="chapter" data-level="1.6" data-path="the-rstudio-application.html"><a href="the-rstudio-application.html"><i class="fa fa-check"></i><b>1.6</b> The RStudio application</a></li>
+<li class="chapter" data-level="1.7" data-path="the-radiant-package.html"><a href="the-radiant-package.html"><i class="fa fa-check"></i><b>1.7</b> The Radiant package</a></li>
+<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> How to load and save a file in R and Radiant</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>2</b> Descriptive statistics</a><ul>
-<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> First examples with <tt>R</tt></a></li>
+<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> First examples with R</a></li>
 <li class="chapter" data-level="2.2" data-path="univariate-descriptive-analysis.html"><a href="univariate-descriptive-analysis.html"><i class="fa fa-check"></i><b>2.2</b> Univariate descriptive analysis</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="univariate-descriptive-analysis.html"><a href="univariate-descriptive-analysis.html#a-single-categorical-variable"><i class="fa fa-check"></i><b>2.2.1</b> A single categorical variable</a></li>
 <li class="chapter" data-level="2.2.2" data-path="univariate-descriptive-analysis.html"><a href="univariate-descriptive-analysis.html#a-single-numerical-variable"><i class="fa fa-check"></i><b>2.2.2</b> A single numerical variable</a></li>
@@ -158,12 +163,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.4" data-path="influential-observations.html"><a href="influential-observations.html"><i class="fa fa-check"></i><b>5.4</b> Influential observations</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendix</a><ul>
-<li class="chapter" data-level="6.1" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html"><i class="fa fa-check"></i><b>6.1</b> Some <tt>R</tt> functions for descriptive statistics</a><ul>
+<li class="chapter" data-level="6.1" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html"><i class="fa fa-check"></i><b>6.1</b> Some R functions for descriptive statistics</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html#univariate-descriptive-analyses"><i class="fa fa-check"></i><b>6.1.1</b> Univariate descriptive analyses</a></li>
 <li class="chapter" data-level="6.1.2" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html#bivariate-descriptive-analyses-1"><i class="fa fa-check"></i><b>6.1.2</b> Bivariate descriptive analyses</a></li>
 <li class="chapter" data-level="6.1.3" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html#further-graphical-representations"><i class="fa fa-check"></i><b>6.1.3</b> Further graphical representations</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html"><i class="fa fa-check"></i><b>6.2</b> Some <tt>R</tt> functions for inferential statistics</a><ul>
+<li class="chapter" data-level="6.2" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html"><i class="fa fa-check"></i><b>6.2</b> Some R functions for inferential statistics</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html#inference-on-the-mean-of-a-normal-population-1"><i class="fa fa-check"></i><b>6.2.1</b> Inference on the mean of a normal population</a></li>
 <li class="chapter" data-level="6.2.2" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html#inference-on-the-proportion-of-successes-in-a-bernoulli-population-1"><i class="fa fa-check"></i><b>6.2.2</b> Inference on the proportion of successes in a Bernoulli population</a></li>
 <li class="chapter" data-level="6.2.3" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html#inference-on-the-comparison-between-the-means-of-two-normal-populations-1"><i class="fa fa-check"></i><b>6.2.3</b> Inference on the comparison between the means of two normal populations</a></li>
@@ -182,7 +187,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>An introduction to <tt>R</tt> and <tt>Radiant</tt> for a first course in Statistics</strong></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An introduction to R and Radiant for a first course in Statistics</a>
           </h1>
         </div>
 
@@ -191,53 +196,61 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="some-r-functions-for-descriptive-statistics" class="section level2">
-<h2><span class="header-section-number">6.1</span> Some <tt>R</tt> functions for descriptive statistics</h2>
+<h2><span class="header-section-number">6.1</span> Some R functions for descriptive statistics</h2>
 <div id="univariate-descriptive-analyses" class="section level3">
 <h3><span class="header-section-number">6.1.1</span> Univariate descriptive analyses</h3>
 <div id="a-single-categorical-variable-1" class="section level4">
 <h4><span class="header-section-number">6.1.1.1</span> A single categorical variable</h4>
 <p>If we are interested in summarizing the information corresponding to a categorical variable, the tools we can use are the frequency distribution together with a graphical representation of it.</p>
-<p>Before showing some examples, we remind you that in <tt>R</tt> categorical variables correspond to factor vectors (see Section <a href="main-data-structures-available-in-r.html#factor-vector">1.3.4</a>). If the variable you want to analyse is not coded as a factor, you must first con-ert it using the <tt>as.factor()</tt> function. For example, to convert the numerical variable <tt>IndustryCode</tt> in the data frame <tt>forbes94</tt> we need to execute the following code:</p>
+<p>Before showing some examples, we remind you that in R categorical variables correspond to factor vectors (see Section <a href="main-data-structures-available-in-r.html#factor-vector">1.3.4</a>). If the variable you want to analyse is not coded as a factor, you must first convert it using the <code>as.factor()</code> function. For example, to convert the numerical variable <code>IndustryCode</code> in the data frame <code>forbes94</code> we need to execute the following code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">load</span>(<span class="st">&quot;Forbes94.RData&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span>forbes94<span class="op">$</span>IndustryCode &lt;-<span class="st"> </span><span class="kw">as.factor</span>(forbes94<span class="op">$</span>IndustryCode)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(forbes94<span class="op">$</span>IndustryCode)</code></pre></div>
 <pre><code> Factor w/ 20 levels &quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,..: 12 12 12 12 12 12 12 12 12 12 ...</code></pre>
-<p>Remember that the <tt>$</tt> operator is used to refer to a column in a data frame.</p>
-<p>To construct the frequency distribution of a categorical variable in <tt>R</tt> we can use the <tt>table()</tt> function, already described in Section <a href="descriptive-R.html#descriptive-R">2.1</a>. For example, the frequency distribution of the categorical variable <tt>WideIndustry</tt> is obtained with the following code:</p>
+<p>Remember that the <code>$</code> operator is used to refer to a column in a data frame.</p>
+<p>To construct the frequency distribution of a categorical variable in R we can use the <code>table()</code> function, already described in Section <a href="descriptive-R.html#descriptive-R">2.1</a>. For example, the frequency distribution of the categorical variable <code>WideIndustry</code> is obtained with the following code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">table</span>(forbes94<span class="op">$</span>WideIndustry)</code></pre></div>
 <pre><code>
-Aerospacedefense         Business    Capital goods        Chemicals 
-              19               27               19               25 
-   ComputersComm     Construction         Consumer           Energy 
-              67               11               54               42 
-   Entertainment        Financial             Food           Forest 
-              27              168               62               19 
-          Health        Insurance           Metals        Retailing 
-              49               54               18               46 
-       Transport           Travel          Utility 
-              15               15               63 </code></pre>
-<p>As always, it is possible to store the result of the <tt>table()</tt> function (a numeric vector containing the absolute frequencies whose elements are labels with as categories of the variable) in a new object and use it for further analysis.</p>
-<p>To produce the relative frequencies we can use the <tt>prop.table()</tt> function, which requires as input the table with the absolute frequencies:</p>
+Aerospacedefense         Business    Capital goods 
+              19               27               19 
+       Chemicals    ComputersComm     Construction 
+              25               67               11 
+        Consumer           Energy    Entertainment 
+              54               42               27 
+       Financial             Food           Forest 
+             168               62               19 
+          Health        Insurance           Metals 
+              49               54               18 
+       Retailing        Transport           Travel 
+              46               15               15 
+         Utility 
+              63 </code></pre>
+<p>As always, it is possible to store the result of the <code>table()</code> function (a numeric vector containing the absolute frequencies whose elements are labels with as categories of the variable) in a new object and use it for further analysis.</p>
+<p>To produce the relative frequencies we can use the <code>prop.table()</code> function, which requires as input the table with the absolute frequencies:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>absfreq &lt;-<span class="st"> </span><span class="kw">table</span>(forbes94<span class="op">$</span>WideIndustry)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">prop.table</span>(absfreq)</code></pre></div>
 <pre><code>
-Aerospacedefense         Business    Capital goods        Chemicals 
-         0.02375          0.03375          0.02375          0.03125 
-   ComputersComm     Construction         Consumer           Energy 
-         0.08375          0.01375          0.06750          0.05250 
-   Entertainment        Financial             Food           Forest 
-         0.03375          0.21000          0.07750          0.02375 
-          Health        Insurance           Metals        Retailing 
-         0.06125          0.06750          0.02250          0.05750 
-       Transport           Travel          Utility 
-         0.01875          0.01875          0.07875 </code></pre>
-<p>Once the frequency distribution is available, we can represent it graphically using a pie or bar chart. In <tt>R</tt> these are obtained respectively with the <tt>pie()</tt> (already described in Section <a href="descriptive-R.html#descriptive-R">2.1</a>) and <tt>barplot()</tt> functions, both requiring the (either absolute or relative) frequencies:</p>
+Aerospacedefense         Business    Capital goods 
+         0.02375          0.03375          0.02375 
+       Chemicals    ComputersComm     Construction 
+         0.03125          0.08375          0.01375 
+        Consumer           Energy    Entertainment 
+         0.06750          0.05250          0.03375 
+       Financial             Food           Forest 
+         0.21000          0.07750          0.02375 
+          Health        Insurance           Metals 
+         0.06125          0.06750          0.02250 
+       Retailing        Transport           Travel 
+         0.05750          0.01875          0.01875 
+         Utility 
+         0.07875 </code></pre>
+<p>Once the frequency distribution is available, we can represent it graphically using a pie or bar chart. In R these are obtained respectively with the <code>pie()</code> (already described in Section <a href="descriptive-R.html#descriptive-R">2.1</a>) and <code>barplot()</code> functions, both requiring the (either absolute or relative) frequencies:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">pie</span>(absfreq, <span class="dt">main =</span> <span class="st">&quot;Distribution of WideIndustry&quot;</span>)      <span class="co"># pie chart</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">barplot</span>(absfreq, <span class="dt">main =</span> <span class="st">&quot;Distribution of WideIndustry&quot;</span>)  <span class="co"># bar chart</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:pie-barplot-main2"></span>
-<img src="R_manual_files/figure-html/pie-barplot-main2-1.pdf" alt="Pie and bar charts with &lt;tt&gt;R&lt;/tt&gt;." width="45%" /><img src="R_manual_files/figure-html/pie-barplot-main2-2.pdf" alt="Pie and bar charts with &lt;tt&gt;R&lt;/tt&gt;." width="45%" />
+<img src="R_manual_files/figure-html/pie-barplot-main2-1.pdf" alt="Pie and bar charts with R." width="45%" /><img src="R_manual_files/figure-html/pie-barplot-main2-2.pdf" alt="Pie and bar charts with R." width="45%" />
 <p class="caption">
-Figure 6.1: Pie and bar charts with <tt>R</tt>.
+Figure 6.1: Pie and bar charts with R.
 </p>
 </div>
 </div>
@@ -245,106 +258,108 @@ Figure 6.1: Pie and bar charts with <tt>R</tt>.
 <h4><span class="header-section-number">6.1.1.2</span> A single numerical variable</h4>
 <div id="frequency-distribution" class="section level5">
 <h5><span class="header-section-number">6.1.1.2.1</span> Frequency distribution</h5>
-<p>The distribution of a numerical variable is represented by a table that shows the frequencies with which the different values are observed, if the variable is discrete, or the classes in which it is divided, if the variable is continuous. For both cases, it is still possible to use the <tt>table()</tt> function, but for continuous variables it is first necessary to split the observed values in classes. A useful function for generating these classes is <tt>cut()</tt>, which creates a factor with the specified classes and which includes the following arguments:</p>
+<p>The distribution of a numerical variable is represented by a table that shows the frequencies with which the different values are observed, if the variable is discrete, or the classes in which it is divided, if the variable is continuous. For both cases, it is still possible to use the <code>table()</code> function, but for continuous variables it is first necessary to split the observed values in classes. A useful function for generating these classes is <code>cut()</code>, which creates a factor with the specified classes and which includes the following arguments:</p>
 <ul>
-<li><tt>x</tt>, the numeric vector whose values we want to split in classes</li>
-<li><tt>breaks</tt>, which allows to specify which classes we want to use; it can be specified in the following alternative ways
+<li><code>x</code>, the numeric vector whose values we want to split in classes</li>
+<li><code>breaks</code>, which allows to specify which classes we want to use; it can be specified in the following alternative ways
 <ul>
 <li>a single numeric value that indicates the number of equal-width classes we want to use</li>
 <li>a vector of numeric values that identify the extremes of the classes (possibly of different widths) to be used</li>
-<li><tt>right</tt>, a logical value that indicates whether the classes should be closed on the left (<tt>FALSE</tt>) or on the right (<tt>TRUE</tt>)</li>
+<li><code>right</code>, a logical value that indicates whether the classes should be closed on the left (<code>FALSE</code>) or on the right (<code>TRUE</code>)</li>
 </ul></li>
-<li><tt>labels</tt>, a vector of labels to be used to identify the classes; if it is set to <tt>FALSE</tt>, the classes will be identified by integers</li>
+<li><code>labels</code>, a vector of labels to be used to identify the classes; if it is set to <code>FALSE</code>, the classes will be identified by integers</li>
 </ul>
-<p>For example, suppose we want to construct the frequency distribution of the <tt>Salary</tt> variable, which provides the salaries paid in 1994 to the CEOs in the data set, using 5 equal-width classes closed on the left. The following code allows us to create a new variable, that we call <tt>Salary_c</tt> and add to the existing data frame:</p>
+<p>For example, suppose we want to construct the frequency distribution of the <code>Salary</code> variable, which provides the salaries paid in 1994 to the CEOs in the data set, using 5 equal-width classes closed on the left. The following code allows us to create a new variable, that we call <code>Salary_c</code> and add to the existing data frame:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>forbes94<span class="op">$</span>Salary_c &lt;-<span class="st"> </span><span class="kw">cut</span>(forbes94<span class="op">$</span>Salary, <span class="dt">breaks =</span> <span class="dv">5</span>, <span class="dt">right =</span> <span class="ot">FALSE</span>)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">table</span>(forbes94<span class="op">$</span>Salary_c)</code></pre></div>
 <pre><code>
-[1.59e+04,5.55e+05) [5.55e+05,1.09e+06) [1.09e+06,1.63e+06) 
-                382                 376                  24 
-[1.63e+06,2.16e+06)  [2.16e+06,2.7e+06) 
-                  4                   3 </code></pre>
+[1.59e+04,5.55e+05) [5.55e+05,1.09e+06) 
+                382                 376 
+[1.09e+06,1.63e+06) [1.63e+06,2.16e+06) 
+                 24                   4 
+ [2.16e+06,2.7e+06) 
+                  3 </code></pre>
 <p>from which we see that the distribution of salaries for these CEOs is decidedly right skewed.</p>
-<p>If we wanted to use the <span class="math inline">\([0, 200000]\)</span>, <span class="math inline">\([200000, 500000]\)</span>, <span class="math inline">\([500000, 800000]\)</span>, <span class="math inline">\([800000, 1500000]\)</span> and <span class="math inline">\([1500000, 3000000]\)</span> classes, then we need to use the <tt>cut()</tt> function as follows:</p>
+<p>If we wanted to use the <span class="math inline">\([0, 200000]\)</span>, <span class="math inline">\([200000, 500000]\)</span>, <span class="math inline">\([500000, 800000]\)</span>, <span class="math inline">\([800000, 1500000]\)</span> and <span class="math inline">\([1500000, 3000000]\)</span> classes, then we need to use the <code>cut()</code> function as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>forbes94<span class="op">$</span>Salary_c &lt;-<span class="st"> </span><span class="kw">cut</span>(forbes94<span class="op">$</span>Salary,
 <span class="op">+</span><span class="st">   </span><span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">200000</span>, <span class="dv">500000</span>, <span class="dv">800000</span>, <span class="dv">1500000</span>, <span class="dv">3000000</span>), <span class="dt">right =</span> <span class="ot">FALSE</span>)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">table</span>(forbes94<span class="op">$</span>Salary_c)</code></pre></div>
 <pre><code>
-      [0,2e+05)   [2e+05,5e+05)   [5e+05,8e+05) [8e+05,1.5e+06) 
-             13             268             351             147 
-[1.5e+06,3e+06) 
-             10 </code></pre>
+      [0,2e+05)   [2e+05,5e+05)   [5e+05,8e+05) 
+             13             268             351 
+[8e+05,1.5e+06) [1.5e+06,3e+06) 
+            147              10 </code></pre>
 <p>To represent graphically the distribution of a numerical variable, various types of graphs are available including the spike plot, the histogram and the box-plot.</p>
 </div>
 <div id="spike-plots" class="section level5">
 <h5><span class="header-section-number">6.1.1.2.2</span> Spike plots</h5>
-<p>We can create a spike plot using the <tt>plot()</tt> function directly on the result provided by <tt>table()</tt> and setting the <tt>type</tt> argument equal to <tt>“h”</tt>. For example, the spike plot for the <tt>Age</tt> variable is obtained as follows:</p>
+<p>We can create a spike plot using the <code>plot()</code> function directly on the result provided by <code>table()</code> and setting the <code>type</code> argument equal to <code>&quot;h&quot;</code>. For example, the spike plot for the <code>Age</code> variable is obtained as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(<span class="kw">table</span>(forbes94<span class="op">$</span>Age), <span class="dt">type =</span> <span class="st">&quot;h&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:aste"></span>
-<img src="R_manual_files/figure-html/aste-1.pdf" alt="Spike plot for the &lt;tt&gt;Age&lt;/tt&gt; variable." width="480" />
+<img src="R_manual_files/figure-html/aste-1.pdf" alt="Spike plot for the `Age` variable." width="480" />
 <p class="caption">
-Figure 6.2: Spike plot for the <tt>Age</tt> variable.
+Figure 6.2: Spike plot for the <code>Age</code> variable.
 </p>
 </div>
-<p>The final appearance of the graph can be changed modifying the many arguments of the <tt>plot()</tt> function. For example, if we want to add the labels to the axes, we should use the arguments <tt>xlab</tt> and <tt>ylab</tt>, that is</p>
+<p>The final appearance of the graph can be changed modifying the many arguments of the <code>plot()</code> function. For example, if we want to add the labels to the axes, we should use the arguments <code>xlab</code> and <code>ylab</code>, that is</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(<span class="kw">table</span>(forbes94<span class="op">$</span>Age), <span class="dt">type =</span> <span class="st">&quot;h&quot;</span>,
 <span class="op">+</span><span class="st">   </span><span class="dt">xlab =</span> <span class="st">&quot;Age&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Absolute frequency&quot;</span>,
 <span class="op">+</span><span class="st">   </span><span class="dt">main =</span> <span class="st">&quot;Spike plot of the Age variable&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:aste2"></span>
-<img src="R_manual_files/figure-html/aste2-1.pdf" alt="Spike plot for the &lt;tt&gt;Age&lt;/tt&gt; variable." width="480" />
+<img src="R_manual_files/figure-html/aste2-1.pdf" alt="Spike plot for the `Age` variable." width="480" />
 <p class="caption">
-Figure 6.3: Spike plot for the <tt>Age</tt> variable.
+Figure 6.3: Spike plot for the <code>Age</code> variable.
 </p>
 </div>
 </div>
 <div id="histogram" class="section level5">
 <h5><span class="header-section-number">6.1.1.2.3</span> Histogram</h5>
-<p>Histograms are graphical representations of the frequency distribution of a variable divided by classes. In <tt>R</tt> it is possible to create a histogram with the function <tt>hist()</tt>. As you already known, it is possible to create a histogram using classes of equal or different widths. The <tt>hist()</tt> function allows to specify our choice with the <tt>breaks</tt> argument, whose usage is identical to that we described for the <tt>cut()</tt> function, that is:</p>
+<p>Histograms are graphical representations of the frequency distribution of a variable divided by classes. In R it is possible to create a histogram with the function <code>hist()</code>. As you already known, it is possible to create a histogram using classes of equal or different widths. The <code>hist()</code> function allows to specify our choice with the <code>breaks</code> argument, whose usage is identical to that we described for the <code>cut()</code> function, that is:</p>
 <ul>
-<li>if we do not specify the value of <tt>breaks</tt>, <tt>R</tt> uses some internal rules to choose a reasonable value for it; we recommend using this option, because it works well in most cases, unless there are special reasons for using a different approach</li>
-<li><tt>breaks</tt> can be specified as a single numerical value (a positive integer), which will indicate the number (indicative<a href="#fn46" class="footnoteRef" id="fnref46"><sup>46</sup></a>) of classes of equal width we want to use</li>
-<li><tt>breaks</tt> can also be specified as a numeric vector, whose elements correspond to the extremes of the classes we intend to use</li>
+<li>if we do not specify the value of <code>breaks</code>, R uses some internal rules to choose a reasonable value for it; we recommend using this option, because it works well in most cases, unless there are special reasons for using a different approach</li>
+<li><code>breaks</code> can be specified as a single numerical value (a positive integer), which will indicate the number (indicative<a href="#fn45" class="footnoteRef" id="fnref45"><sup>45</sup></a>) of classes of equal width we want to use</li>
+<li><code>breaks</code> can also be specified as a numeric vector, whose elements correspond to the extremes of the classes we intend to use</li>
 </ul>
-<p>In addition to <tt>breaks</tt>, the <tt>hist()</tt> function contains many other arguments with which you can modify the final look of the graph, such as <tt>main</tt>, <tt>xlab</tt> and <tt>ylab</tt>, which work as we have seen so far.</p>
-<p>Let’s now look at some histogram examples for the <tt>Salary</tt> variable:</p>
+<p>In addition to <code>breaks</code>, the <code>hist()</code> function contains many other arguments with which you can modify the final look of the graph, such as <code>main</code>, <code>xlab</code> and <code>ylab</code>, which work as we have seen so far.</p>
+<p>Let’s now look at some histogram examples for the <code>Salary</code> variable:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">hist</span>(forbes94<span class="op">$</span>Salary, <span class="dt">main =</span> <span class="st">&quot;Histogram of Salary&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Salary (in $)&quot;</span>,
 <span class="op">+</span><span class="st">   </span><span class="dt">ylab =</span> <span class="st">&quot;Absolute frequency&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:hist"></span>
-<img src="R_manual_files/figure-html/hist-1.pdf" alt="Example of histogram for the &lt;tt&gt;Salary&lt;/tt&gt; variable (equal-width classes)." width="480" />
+<img src="R_manual_files/figure-html/hist-1.pdf" alt="Example of histogram for the `Salary` variable (equal-width classes)." width="480" />
 <p class="caption">
-Figure 6.4: Example of histogram for the <tt>Salary</tt> variable (equal-width classes).
+Figure 6.4: Example of histogram for the <code>Salary</code> variable (equal-width classes).
 </p>
 </div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">hist</span>(forbes94<span class="op">$</span>Salary, <span class="dt">main =</span> <span class="st">&quot;Histogram of Salary&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Salary (in $)&quot;</span>,
 <span class="op">+</span><span class="st">   </span><span class="dt">ylab =</span> <span class="st">&quot;Absolute frequency&quot;</span>, <span class="dt">breaks =</span> <span class="dv">50</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:hist2"></span>
-<img src="R_manual_files/figure-html/hist2-1.pdf" alt="Example of histogram for the &lt;tt&gt;Salary&lt;/tt&gt; variable (equal-width classes)." width="480" />
+<img src="R_manual_files/figure-html/hist2-1.pdf" alt="Example of histogram for the `Salary` variable (equal-width classes)." width="480" />
 <p class="caption">
-Figure 6.5: Example of histogram for the <tt>Salary</tt> variable (equal-width classes).
+Figure 6.5: Example of histogram for the <code>Salary</code> variable (equal-width classes).
 </p>
 </div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">hist</span>(forbes94<span class="op">$</span>Salary, <span class="dt">main =</span> <span class="st">&quot;Histogram of Salary&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Salary (in $)&quot;</span>,
 <span class="op">+</span><span class="st">   </span><span class="dt">ylab =</span> <span class="st">&quot;Density&quot;</span>,
 <span class="op">+</span><span class="st">   </span><span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">100000</span>, <span class="dv">300000</span>, <span class="dv">350000</span>, <span class="dv">500000</span>, <span class="dv">800000</span>, <span class="dv">1000000</span>, <span class="dv">3000000</span>))</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:hist3"></span>
-<img src="R_manual_files/figure-html/hist3-1.pdf" alt="Example of histogram for the &lt;tt&gt;Salary&lt;/tt&gt; variable (different width classes)." width="480" />
+<img src="R_manual_files/figure-html/hist3-1.pdf" alt="Example of histogram for the `Salary` variable (different width classes)." width="480" />
 <p class="caption">
-Figure 6.6: Example of histogram for the <tt>Salary</tt> variable (different width classes).
+Figure 6.6: Example of histogram for the <code>Salary</code> variable (different width classes).
 </p>
 </div>
-<p>These examples clearly show that the distribution of <tt>Salary</tt> is skewed to the right. We also point out that in the last example, where we used 7 classes of different widths, <tt>R</tt> has automatically (and correctly!) decided to report the densities on the vertical axis, while in the other two examples the vertical axis reports the absolute frequencies. You may decide to report the density on the vertical axis even when you use equal-width classes setting to <tt>FALSE</tt> the value of the argument <tt>freq</tt><a href="#fn47" class="footnoteRef" id="fnref47"><sup>47</sup></a>.</p>
+<p>These examples clearly show that the distribution of <code>Salary</code> is skewed to the right. We also point out that in the last example, where we used 7 classes of different widths, R has automatically (and correctly!) decided to report the densities on the vertical axis, while in the other two examples the vertical axis reports the absolute frequencies. You may decide to report the density on the vertical axis even when you use equal-width classes setting to <code>FALSE</code> the value of the argument <code>freq</code><a href="#fn46" class="footnoteRef" id="fnref46"><sup>46</sup></a>.</p>
 </div>
 <div id="box-plot" class="section level5">
 <h5><span class="header-section-number">6.1.1.2.4</span> Box-plot</h5>
-<p>In addition to the spike plot and histogram, it is useful also to produce the box-plot, which allows to integrate the information provided by the other graphs. As we have already seen in Section <a href="descriptive-R.html#descriptive-R">2.1</a>, in <tt>R</tt> it is possible to construct a box-plot using the <tt>boxplot()</tt> function. Recall that the box-plot of the <tt>Salary</tt> variable is obtained as follows:</p>
+<p>In addition to the spike plot and histogram, it is useful also to produce the box-plot, which allows to integrate the information provided by the other graphs. As we have already seen in Section <a href="descriptive-R.html#descriptive-R">2.1</a>, in R it is possible to construct a box-plot using the <code>boxplot()</code> function. Recall that the box-plot of the <code>Salary</code> variable is obtained as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">boxplot</span>(forbes94<span class="op">$</span>Salary)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:boxplot-bis"></span>
-<img src="R_manual_files/figure-html/boxplot-bis-1.pdf" alt="Example of box-plot with &lt;tt&gt;R&lt;/tt&gt;." width="480" />
+<img src="R_manual_files/figure-html/boxplot-bis-1.pdf" alt="Example of box-plot with R." width="480" />
 <p class="caption">
-Figure 6.7: Example of box-plot with <tt>R</tt>.
+Figure 6.7: Example of box-plot with R.
 </p>
 </div>
-<p>A useful final comment on the <tt>boxplot()</tt> function concerns the possibility of saving additional output regarding the graph. In particular, <tt>boxplot()</tt> allows to save the values of the indices used to construct the graph in a list (see Section <a href="main-data-structures-available-in-r.html#lists">1.3.6</a>). For example, for the variable <tt>Salary</tt> we have</p>
+<p>A useful final comment on the <code>boxplot()</code> function concerns the possibility of saving additional output regarding the graph. In particular, <code>boxplot()</code> allows to save the values of the indices used to construct the graph in a list (see Section <a href="main-data-structures-available-in-r.html#lists">1.3.6</a>). For example, for the variable <code>Salary</code> we have</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>bp_out &lt;-<span class="st"> </span><span class="kw">boxplot</span>(forbes94<span class="op">$</span>Salary)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(bp_out)</code></pre></div>
 <pre><code>List of 6
@@ -354,25 +369,25 @@ Figure 6.7: Example of box-plot with <tt>R</tt>.
  $ out  : num [1:18] 1750000 1400000 1500000 1375000 2000000 ...
  $ group: num [1:18] 1 1 1 1 1 1 1 1 1 1 ...
  $ names: chr &quot;1&quot;</code></pre>
-<p>As you see, <tt>bp_out</tt> is a list containing 6 elements (i.e. other objects), including <tt>stats</tt>, which contains the values of the 5 indices needed to build the box-plot (minimum, first quartile, median, third quartile and maximum), and <tt>out</tt>, the vector of outliers. Therefore, we can conclude that the <tt>Salary</tt> variable has 18 outliers:</p>
-<pre><code> [1] 1750000 1400000 1500000 1375000 2000000 1900000 1250000 1483500
- [9] 1454000 2633570 1240000 1841000 1231730 2667730 2700000 1525000
-[17] 1397810 1504940</code></pre>
+<p>As you see, <code>bp_out</code> is a list containing 6 elements (i.e. other objects), including <code>stats</code>, which contains the values of the 5 indices needed to build the box-plot (minimum, first quartile, median, third quartile and maximum), and <code>out</code>, the vector of outliers. Therefore, we can conclude that the <code>Salary</code> variable has 18 outliers:</p>
+<pre><code> [1] 1750000 1400000 1500000 1375000 2000000 1900000
+ [7] 1250000 1483500 1454000 2633570 1240000 1841000
+[13] 1231730 2667730 2700000 1525000 1397810 1504940</code></pre>
 </div>
 <div id="summary-stats" class="section level5">
 <h5><span class="header-section-number">6.1.1.2.5</span> Summary indices</h5>
-<p>The main functions available in <tt>R</tt> for the calculation of summary indices for a numeric variable are:</p>
+<p>The main functions available in R for the calculation of summary indices for a numeric variable are:</p>
 <ul>
-<li><tt>min()</tt> returns the minimum observed value</li>
-<li><tt>max()</tt> returns the maximum observed value</li>
-<li><tt>mean()</tt> returns the sample mean</li>
-<li><tt>median()</tt> returns the sample median</li>
-<li><tt>var()</tt> returns the sample variance</li>
-<li><tt>sd()</tt> returns the sample standard deviation</li>
-<li><tt>quantile()</tt> returns the sample quantiles</li>
-<li><tt>summary()</tt>, which automatically provides a list with some of the above mentioned indices</li>
+<li><code>min()</code> returns the minimum observed value</li>
+<li><code>max()</code> returns the maximum observed value</li>
+<li><code>mean()</code> returns the sample mean</li>
+<li><code>median()</code> returns the sample median</li>
+<li><code>var()</code> returns the sample variance</li>
+<li><code>sd()</code> returns the sample standard deviation</li>
+<li><code>quantile()</code> returns the sample quantiles</li>
+<li><code>summary()</code>, which automatically provides a list with some of the above mentioned indices</li>
 </ul>
-<p>If the variable contains missing values (i.e. <tt>NA</tt>), all these functions except from <tt>summary()</tt> require the <tt>na.rm</tt> argument to be set to <tt>TRUE</tt>, with which we tell to <tt>R</tt> to remove the missing data internally (but not from the data set) before computing the indices. Let’s see an example using the <tt>Salary</tt> variable:</p>
+<p>If the variable contains missing values (i.e. <code>NA</code>), all these functions except from <code>summary()</code> require the <code>na.rm</code> argument to be set to <code>TRUE</code>, with which we tell to R to remove the missing data internally (but not from the data set) before computing the indices. Let’s see an example using the <code>Salary</code> variable:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">min</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>[1] 18600</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">max</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
@@ -382,19 +397,21 @@ Figure 6.7: Example of box-plot with <tt>R</tt>.
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">median</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>[1] 569231</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">var</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
-<pre><code>[1] 78579020522</code></pre>
+<pre><code>[1] 7.858e+10</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">sd</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
-<pre><code>[1] 280319.5</code></pre>
+<pre><code>[1] 280319</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">quantile</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>     0%     25%     50%     75%    100% 
   18600  433333  569231  750000 2700000 </code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">summary</span>(forbes94<span class="op">$</span>Salary)</code></pre></div>
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
-  18600  433333  569231  613458  750000 2700000      11 </code></pre>
-<p>The <tt>quantile()</tt> function provides the percentiles of a numeric set of values. The order of the percentiles we want to calculate is specified with the <tt>probs</tt> argument. For example, the percentiles of order 10 and 95 for the variable <tt>Salary</tt> are computed as follows:</p>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  18600  433333  569231  613458  750000 2700000 
+   NA&#39;s 
+     11 </code></pre>
+<p>The <code>quantile()</code> function provides the percentiles of a numeric set of values. The order of the percentiles we want to calculate is specified with the <code>probs</code> argument. For example, the percentiles of order 10 and 95 for the variable <code>Salary</code> are computed as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">quantile</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>, <span class="dt">probs =</span> <span class="kw">c</span>(<span class="fl">0.10</span>, <span class="fl">0.95</span>))</code></pre></div>
-<pre><code>      10%       95% 
- 325148.8 1025640.0 </code></pre>
+<pre><code>    10%     95% 
+ 325149 1025640 </code></pre>
 </div>
 </div>
 </div>
@@ -402,7 +419,7 @@ Figure 6.7: Example of box-plot with <tt>R</tt>.
 <h3><span class="header-section-number">6.1.2</span> Bivariate descriptive analyses</h3>
 <div id="two-categorical-variables-1" class="section level4">
 <h4><span class="header-section-number">6.1.2.1</span> Two categorical variables</h4>
-<p>In case we want to jointly analyse two categorical variables, the main tool we can use is a two-way table. In <tt>R</tt> we can construct a two-way table with the <tt>table()</tt> function, that we already encountered in other situations. To obtain a two-way table, however, we must specify two variables, respectively the row variable and the column variable (in this order). The following code constructs the two-way table for the <tt>MBA</tt> variable against <tt>WideIndustry</tt>:</p>
+<p>In case we want to jointly analyse two categorical variables, the main tool we can use is a two-way table. In R we can construct a two-way table with the <code>table()</code> function, that we already encountered in other situations. To obtain a two-way table, however, we must specify two variables, respectively the row variable and the column variable (in this order). The following code constructs the two-way table for the <code>MBA</code> variable against <code>WideIndustry</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">table</span>(forbes94<span class="op">$</span>WideIndustry, forbes94<span class="op">$</span>MBA)</code></pre></div>
 <pre><code>                  
                      0   1
@@ -425,41 +442,41 @@ Figure 6.7: Example of box-plot with <tt>R</tt>.
   Transport         11   4
   Travel            13   2
   Utility           48  15</code></pre>
-<p>The graphical representation of a two-way table corresponds to a stacked bar chart, which is obtained with the <tt>plot()</tt> function where the variables must be specified through a formula:</p>
+<p>The graphical representation of a two-way table corresponds to a stacked bar chart, which is obtained with the <code>plot()</code> function where the variables must be specified through a formula:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(MBA <span class="op">~</span><span class="st"> </span>WideIndustry, <span class="dt">data =</span> forbes94)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:mosaic-plot"></span>
-<img src="R_manual_files/figure-html/mosaic-plot-1.pdf" alt="Stacked bar chart for the &lt;tt&gt;MBA&lt;/tt&gt; variable versus &lt;tt&gt;WideIndustry&lt;/tt&gt;." width="480" />
+<img src="R_manual_files/figure-html/mosaic-plot-1.pdf" alt="Stacked bar chart for the `MBA` variable versus `WideIndustry`." width="480" />
 <p class="caption">
-Figure 6.8: Stacked bar chart for the <tt>MBA</tt> variable versus <tt>WideIndustry</tt>.
+Figure 6.8: Stacked bar chart for the <code>MBA</code> variable versus <code>WideIndustry</code>.
 </p>
 </div>
 </div>
 <div id="two-numerical-variables" class="section level4">
 <h4><span class="header-section-number">6.1.2.2</span> Two numerical variables</h4>
-<p>In <tt>R</tt> it is possible to create a scatter plot with the <tt>plot()</tt> function where we specify the variable <span class="math inline">\(x\)</span> as the first argument and <span class="math inline">\(y\)</span> as the second one<a href="#fn48" class="footnoteRef" id="fnref48"><sup>48</sup></a>. As for the other graphical functions, we can add other arguments with which we can modify the final appearance of the graph. The following code creates the scatter plot for the <tt>Salary</tt> variable against the <tt>Age</tt> variable:</p>
+<p>In R it is possible to create a scatter plot with the <code>plot()</code> function where we specify the variable <span class="math inline">\(x\)</span> as the first argument and <span class="math inline">\(y\)</span> as the second one<a href="#fn47" class="footnoteRef" id="fnref47"><sup>47</sup></a>. As for the other graphical functions, we can add other arguments with which we can modify the final appearance of the graph. The following code creates the scatter plot for the <code>Salary</code> variable against the <code>Age</code> variable:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(forbes94<span class="op">$</span>Age, forbes94<span class="op">$</span>Salary, <span class="dt">xlab =</span> <span class="st">&quot;Age (in years)&quot;</span>,
 <span class="op">+</span><span class="st">   </span><span class="dt">ylab =</span> <span class="st">&quot;Salary (in $)&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Scatter plot&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:scatter"></span>
-<img src="R_manual_files/figure-html/scatter-1.pdf" alt="Scatter plot of the &lt;tt&gt;Salary&lt;/tt&gt; variable versus &lt;tt&gt;Age&lt;/tt&gt;." width="480" />
+<img src="R_manual_files/figure-html/scatter-1.pdf" alt="Scatter plot of the `Salary` variable versus `Age`." width="480" />
 <p class="caption">
-Figure 6.9: Scatter plot of the <tt>Salary</tt> variable versus <tt>Age</tt>.
+Figure 6.9: Scatter plot of the <code>Salary</code> variable versus <code>Age</code>.
 </p>
 </div>
-<p>For the calculation of the covariance and the linear correlation index we can use the <tt>cov()</tt> and <tt>cor()</tt> functions respectively. If we include more than two variables in these functions, they will return the sample covariance and correlation matrices respectively. If any of the variables contain missing data, you should also include the <tt>use</tt> argument and set it to <tt>“complete.obs”</tt><a href="#fn49" class="footnoteRef" id="fnref49"><sup>49</sup></a>. To calculate the covariances and correlations among the variables <tt>Age</tt>, <tt>Salary</tt>, <tt>Bonus</tt> and <tt>Other</tt> we can execute the following code:</p>
+<p>For the calculation of the covariance and the linear correlation index we can use the <code>cov()</code> and <code>cor()</code> functions respectively. If we include more than two variables in these functions, they will return the sample covariance and correlation matrices respectively. If any of the variables contain missing data, you should also include the <code>use</code> argument and set it to <code>&quot;complete.obs&quot;</code><a href="#fn48" class="footnoteRef" id="fnref48"><sup>48</sup></a>. To calculate the covariances and correlations among the variables <code>Age</code>, <code>Salary</code>, <code>Bonus</code> and <code>Other</code> we can execute the following code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">cov</span>(forbes94[, <span class="kw">c</span>(<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Salary&quot;</span>, <span class="st">&quot;Bonus&quot;</span>, <span class="st">&quot;Other&quot;</span>)],
 <span class="op">+</span><span class="st">   </span><span class="dt">use =</span> <span class="st">&quot;complete.obs&quot;</span>)</code></pre></div>
-<pre><code>                Age       Salary        Bonus        Other
-Age        41.58899 4.059318e+05 7.083466e+05 4.464542e+05
-Salary 405931.80451 6.886109e+10 6.193965e+10 9.695591e+10
-Bonus  708346.60585 6.193965e+10 8.676328e+11 4.023467e+11
-Other  446454.17141 9.695591e+10 4.023467e+11 1.670905e+12</code></pre>
+<pre><code>             Age    Salary     Bonus     Other
+Age        41.59 4.059e+05 7.083e+05 4.465e+05
+Salary 405931.80 6.886e+10 6.194e+10 9.696e+10
+Bonus  708346.61 6.194e+10 8.676e+11 4.023e+11
+Other  446454.17 9.696e+10 4.023e+11 1.671e+12</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">cor</span>(forbes94[, <span class="kw">c</span>(<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Salary&quot;</span>, <span class="st">&quot;Bonus&quot;</span>, <span class="st">&quot;Other&quot;</span>)],
 <span class="op">+</span><span class="st">   </span><span class="dt">use =</span> <span class="st">&quot;complete.obs&quot;</span>)</code></pre></div>
-<pre><code>              Age    Salary     Bonus      Other
-Age    1.00000000 0.2398706 0.1179203 0.05355646
-Salary 0.23987057 1.0000000 0.2534042 0.28583240
-Bonus  0.11792032 0.2534042 1.0000000 0.33416164
-Other  0.05355646 0.2858324 0.3341616 1.00000000</code></pre>
+<pre><code>           Age Salary  Bonus   Other
+Age    1.00000 0.2399 0.1179 0.05356
+Salary 0.23987 1.0000 0.2534 0.28583
+Bonus  0.11792 0.2534 1.0000 0.33416
+Other  0.05356 0.2858 0.3342 1.00000</code></pre>
 <p>The correlations between these variables are all positive, but weak or very weak. This is mainly due to the presence of numerous outliers and to the heterogeneity of the observed values.</p>
 </div>
 </div>
@@ -467,40 +484,56 @@ Other  0.05355646 0.2858324 0.3341616 1.00000000</code></pre>
 <h3><span class="header-section-number">6.1.3</span> Further graphical representations</h3>
 <div id="the-pareto-diagram" class="section level4">
 <h4><span class="header-section-number">6.1.3.1</span> The Pareto diagram</h4>
-<p>The Pareto diagram is a graphical representation useful for separating the modalities of a categorical variable that have been observed more frequently from the less frequent ones. Unfortunately, there is no function in the basic <tt>R</tt> packages that produce a Pareto diagram. However, it is possible to download and install an additional package, called <tt>qcc</tt>, which contains some functions dedicated to the statistical quality control in production, which also includes a function to draw the Pareto diagram. We can install the package by following the instructions in Section <a href="packages.html#packages">1.5</a>, or alternatively by running the following code:</p>
+<p>The Pareto diagram is a graphical representation useful for separating the modalities of a categorical variable that have been observed more frequently from the less frequent ones. Unfortunately, there is no function in the basic R packages that produce a Pareto diagram. However, it is possible to download and install an additional package, called <code>qcc</code>, which contains some functions dedicated to the statistical quality control in production, which also includes a function to draw the Pareto diagram. We can install the package by following the instructions in Section <a href="packages.html#packages">1.5</a>, or alternatively by running the following code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">install.packages</span>(<span class="st">&quot;qcc&quot;</span>)   <span class="co"># download the qcc package</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">library</span>(qcc)              <span class="co"># load the qcc package</span></code></pre></div>
-<p>The <tt>qcc</tt> package contains a function called <tt>pareto.chart()</tt> that allows us to directly produce the Pareto diagram. This function requires a numeric vector with the absolute frequencies with which the various categories have been observed. To obtain a more informative graph, we also recommend to assign names to the elements of the vector, which will be shown on the horizontal axis of the graph. The following code first loads some data contained in the data frame <tt>pareto_dat</tt>, which correspond to the number of defective pieces detected in a company (column <tt>Total</tt>), together with the corresponding cause of defect (column <tt>Cause</tt>), and then use this data to construct the Pareto diagram:</p>
+<p>The <code>qcc</code> package contains a function called <code>pareto.chart()</code> that allows us to directly produce the Pareto diagram. This function requires a numeric vector with the absolute frequencies with which the various categories have been observed. To obtain a more informative graph, we also recommend to assign names to the elements of the vector, which will be shown on the horizontal axis of the graph. The following code first loads some data contained in the data frame <code>pareto_dat</code>, which correspond to the number of defective pieces detected in a company (column <code>Total</code>), together with the corresponding cause of defect (column <code>Cause</code>), and then use this data to construct the Pareto diagram:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">load</span>(<span class="st">&quot;pareto_data.RData&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span>pdat &lt;-<span class="st"> </span>pareto_dat<span class="op">$</span>Total
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">names</span>(pdat) &lt;-<span class="st"> </span>pareto_dat<span class="op">$</span>Cause
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">pareto.chart</span>(<span class="dt">data =</span> pdat, <span class="dt">main =</span> <span class="st">&quot;Pareto diagram&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:pareto-chart2"></span>
-<img src="R_manual_files/figure-html/pareto-chart2-1.pdf" alt="Example of a Pareto diagram using the &lt;tt&gt;pareto.chart()&lt;/tt&gt; function from the &lt;tt&gt;qcc&lt;/tt&gt; package." width="576" />
+<img src="R_manual_files/figure-html/pareto-chart2-1.pdf" alt="Example of a Pareto diagram using the `pareto.chart()` function from the `qcc` package." width="576" />
 <p class="caption">
-Figure 6.10: Example of a Pareto diagram using the <tt>pareto.chart()</tt> function from the <tt>qcc</tt> package.
+Figure 6.10: Example of a Pareto diagram using the <code>pareto.chart()</code> function from the <code>qcc</code> package.
 </p>
 </div>
 <pre><code>                         
 Pareto chart analysis for pdat
-                           Frequency  Cum.Freq. Percentage Cum.Percent.
-  Compressor               15.000000  15.000000  22.058824    22.058824
-  Machine adjustment       11.000000  26.000000  16.176471    38.235294
-  Packing                  10.000000  36.000000  14.705882    52.941176
-  Supplier                  9.000000  45.000000  13.235294    66.176471
-  Operation conditions      8.000000  53.000000  11.764706    77.941176
-  Transport agency          3.000000  56.000000   4.411765    82.352941
-  Measurement apparatus     3.000000  59.000000   4.411765    86.764706
-  Receptionist              2.000000  61.000000   2.941176    89.705882
-  Transport method          2.000000  63.000000   2.941176    92.647059
-  Recording method          2.000000  65.000000   2.941176    95.588235
-  Recording Operator        1.000000  66.000000   1.470588    97.058824
-  Storage operators         1.000000  67.000000   1.470588    98.529412
-  Raw materials reception   1.000000  68.000000   1.470588   100.000000</code></pre>
+                          Frequency Cum.Freq.
+  Compressor                 15.000    15.000
+  Machine adjustment         11.000    26.000
+  Packing                    10.000    36.000
+  Supplier                    9.000    45.000
+  Operation conditions        8.000    53.000
+  Transport agency            3.000    56.000
+  Measurement apparatus       3.000    59.000
+  Receptionist                2.000    61.000
+  Transport method            2.000    63.000
+  Recording method            2.000    65.000
+  Recording Operator          1.000    66.000
+  Storage operators           1.000    67.000
+  Raw materials reception     1.000    68.000
+                         
+Pareto chart analysis for pdat
+                          Percentage Cum.Percent.
+  Compressor                  22.059       22.059
+  Machine adjustment          16.176       38.235
+  Packing                     14.706       52.941
+  Supplier                    13.235       66.176
+  Operation conditions        11.765       77.941
+  Transport agency             4.412       82.353
+  Measurement apparatus        4.412       86.765
+  Receptionist                 2.941       89.706
+  Transport method             2.941       92.647
+  Recording method             2.941       95.588
+  Recording Operator           1.471       97.059
+  Storage operators            1.471       98.529
+  Raw materials reception      1.471      100.000</code></pre>
 </div>
 <div id="graphical-representation-of-a-time-series" class="section level4">
 <h4><span class="header-section-number">6.1.3.2</span> Graphical representation of a time series</h4>
-<p>Another situation that is frequently encountered when analysing data is that in which the observations are temporally ordered. This type of data is called time series. The <tt>ts()</tt> function allows us to create a time series and define its characteristics in terms of the number of observations per year, starting and ending dates. As an example, we load the file <tt>advertising_sales.RData</tt>, which contains the data frame <tt>advertising_sales</tt> with the monthly historical series of sales and advertising expenditures (both in thousands of dollars) of a fitness product. The available data have been collected since January 2012. The following code allows to define the data as a times series object by applying the function <tt>ts()</tt> with the argument <tt>frequency</tt> set at 12 (i.e. 12 observations per year) and the argument <tt>start</tt> to the vector <tt>c (2012, 1)</tt>, which respectively indicate the year and the month of the first observation in the sample. Finally, with the function <tt>plot()</tt> we create the time plot of the two series, which we represent with different colors and line types (arguments <tt>col</tt> and <tt>lty</tt>)<a href="#fn50" class="footnoteRef" id="fnref50"><sup>50</sup></a>:</p>
+<p>Another situation that is frequently encountered when analysing data is that in which the observations are temporally ordered. This type of data is called time series. The <code>ts()</code> function allows us to create a time series and define its characteristics in terms of the number of observations per year, starting and ending dates. As an example, we load the file <code>advertising_sales.RData</code>, which contains the data frame <code>advertising_sales</code> with the monthly historical series of sales and advertising expenditures (both in thousands of dollars) of a fitness product. The available data have been collected since January 2012. The following code allows to define the data as a times series object by applying the function <code>ts()</code> with the argument <code>frequency</code> set at 12 (i.e. 12 observations per year) and the argument <code>start</code> to the vector <code>c (2012, 1)</code>, which respectively indicate the year and the month of the first observation in the sample. Finally, with the function <code>plot()</code> we create the time plot of the two series, which we represent with different colors and line types (arguments <code>col</code> and <code>lty</code>)<a href="#fn49" class="footnoteRef" id="fnref49"><sup>49</sup></a>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">load</span>(<span class="st">&quot;advertising_sales.RData&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span>adv_sales &lt;-<span class="st"> </span><span class="kw">ts</span>(advertising_sales[, <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)], <span class="dt">frequency =</span> <span class="dv">12</span>, <span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">2012</span>, <span class="dv">1</span>))
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(adv_sales, <span class="dt">plot.type =</span> <span class="st">&quot;single&quot;</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>),
@@ -516,40 +549,40 @@ Figure 6.11: Example of time series plot.
 <div id="how-to-check-if-a-variable-is-normally-distributed" class="section level4">
 <h4><span class="header-section-number">6.1.3.3</span> How to check if a variable is normally distributed</h4>
 <p>Many statistical models require that the reference population is distributed according to a normal distribution. Therefore, it is necessary to verify that this assumption is at least approximately satisfied by the sample data we are analysing otherwise the results we obtain may be biased and unreliable.</p>
-<p>A simple but effective graphical tool for verifying the normality of a distribution of a numeric set of data is the <em>normal probability plot</em>, which can be created in <tt>R</tt> through the <tt>qqnorm()</tt> function. This function requires only the variable to analyse, while other arguments are available to improve the appearance of the graph (<tt>main</tt>, <tt>xlab</tt>, <tt>ylab</tt>, <tt>col</tt>, etc. .).</p>
-<p>After executing <tt>qqnorm()</tt>, the <tt>qqline()</tt> function allows adding a line to the chart that helps in evaluating the proximity of the empirical distribution of the data to the normal distribution. The <tt>qqline()</tt> function also requires the name of the variable being analysed.</p>
-<p>The following code generates the normal probability plot for the <tt>Salary</tt> variable:</p>
+<p>A simple but effective graphical tool for verifying the normality of a distribution of a numeric set of data is the <em>normal probability plot</em>, which can be created in R through the <code>qqnorm()</code> function. This function requires only the variable to analyse, while other arguments are available to improve the appearance of the graph (<code>main</code>, <code>xlab</code>, <code>ylab</code>, <code>col</code>, etc. .).</p>
+<p>After executing <code>qqnorm()</code>, the <code>qqline()</code> function allows adding a line to the chart that helps in evaluating the proximity of the empirical distribution of the data to the normal distribution. The <code>qqline()</code> function also requires the name of the variable being analysed.</p>
+<p>The following code generates the normal probability plot for the <code>Salary</code> variable:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">qqnorm</span>(forbes94<span class="op">$</span>Salary, <span class="dt">main =</span> <span class="st">&quot;Normal probability plot for Salary&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">qqline</span>(forbes94<span class="op">$</span>Salary)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:qqnorm"></span>
-<img src="R_manual_files/figure-html/qqnorm-1.pdf" alt="Example of normal probability plot for the &lt;tt&gt;Salary&lt;/tt&gt; variable." width="480" />
+<img src="R_manual_files/figure-html/qqnorm-1.pdf" alt="Example of normal probability plot for the `Salary` variable." width="480" />
 <p class="caption">
-Figure 6.12: Example of normal probability plot for the <tt>Salary</tt> variable.
+Figure 6.12: Example of normal probability plot for the <code>Salary</code> variable.
 </p>
 </div>
-<p>From the graph we can conclude that the distribution of <tt>Salary</tt> is skewed to the right and therefore cannot be considered distributed as normal.</p>
-<p>As a second example we consider the variable <tt>Age</tt>:</p>
+<p>From the graph we can conclude that the distribution of <code>Salary</code> is skewed to the right and therefore cannot be considered distributed as normal.</p>
+<p>As a second example we consider the variable <code>Age</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">qqnorm</span>(forbes94<span class="op">$</span>Age, <span class="dt">main =</span> <span class="st">&quot;Normal probability plot for Age&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">qqline</span>(forbes94<span class="op">$</span>Age)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:qqnorm2"></span>
-<img src="R_manual_files/figure-html/qqnorm2-1.pdf" alt="Example of normal probability plot for the &lt;tt&gt;Age&lt;/tt&gt; variable." width="480" />
+<img src="R_manual_files/figure-html/qqnorm2-1.pdf" alt="Example of normal probability plot for the `Age` variable." width="480" />
 <p class="caption">
-Figure 6.13: Example of normal probability plot for the <tt>Age</tt> variable.
+Figure 6.13: Example of normal probability plot for the <code>Age</code> variable.
 </p>
 </div>
-<p>In this case the empirical distribution of <tt>Age</tt> is much closer, though not perfectly, to a normal distribution<a href="#fn51" class="footnoteRef" id="fnref51"><sup>51</sup></a>.</p>
+<p>In this case the empirical distribution of <code>Age</code> is much closer, though not perfectly, to a normal distribution<a href="#fn50" class="footnoteRef" id="fnref50"><sup>50</sup></a>.</p>
 </div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="46">
-<li id="fn46"><p>As it is also highlighted in the help of the function <tt>hist()</tt>, in fact, the value that we provide for the number of equal-width classes is only a “suggestion”, but internally this value is revised according to some rules, which is not our goal to describe now.<a href="some-r-functions-for-descriptive-statistics.html#fnref46">↩</a></p></li>
-<li id="fn47"><p>If you try to set <tt>freq = TRUE</tt> in the case of classes with different widths, you would get an instructive error message.<a href="some-r-functions-for-descriptive-statistics.html#fnref47">↩</a></p></li>
-<li id="fn48"><p>Alternatively, the variables can be specified through a formula, for example <tt>plot(Salary <span class="math inline">\(\sim\)</span> Age, data = forbes94)</tt>.<a href="some-r-functions-for-descriptive-statistics.html#fnref48">↩</a></p></li>
-<li id="fn49"><p>Other choices are available for <tt>use</tt>, but we do not present them in this manual. However, we invite you to read the help pages of these functions.<a href="some-r-functions-for-descriptive-statistics.html#fnref49">↩</a></p></li>
-<li id="fn50"><p>The arguments <tt>lwd</tt>, <tt>lty</tt> and <tt>sub</tt> are used to define the thickness of the line (<tt>2</tt> means lines twice as thick as normal), the line type (<tt>1</tt> means a solid line, while 2 means a dashed one) and a subtitle, shown at bottom of the graph.<a href="some-r-functions-for-descriptive-statistics.html#fnref50">↩</a></p></li>
-<li id="fn51"><p>Remember that the normal probability plot is a graphical tool, therefore it helps to discriminate well if we are close or not to a situation of normality only in the most evident cases. In many situations, however, the chart does not allow to reach a clear conclusion. In these cases it is necessary to use more elaborate tools that are not discussed neither here nor in the course.<a href="some-r-functions-for-descriptive-statistics.html#fnref51">↩</a></p></li>
+<ol start="45">
+<li id="fn45"><p>As it is also highlighted in the help of the function <code>hist()</code>, in fact, the value that we provide for the number of equal-width classes is only a “suggestion”, but internally this value is revised according to some rules, which is not our goal to describe now.<a href="some-r-functions-for-descriptive-statistics.html#fnref45">↩</a></p></li>
+<li id="fn46"><p>If you try to set <code>freq = TRUE</code> in the case of classes with different widths, you would get an instructive error message.<a href="some-r-functions-for-descriptive-statistics.html#fnref46">↩</a></p></li>
+<li id="fn47"><p>Alternatively, the variables can be specified through a formula, for example <code>plot(Salary $\sim$ Age, data = forbes94)</code>.<a href="some-r-functions-for-descriptive-statistics.html#fnref47">↩</a></p></li>
+<li id="fn48"><p>Other choices are available for <code>use</code>, but we do not present them in this manual. However, we invite you to read the help pages of these functions.<a href="some-r-functions-for-descriptive-statistics.html#fnref48">↩</a></p></li>
+<li id="fn49"><p>The arguments <code>lwd</code>, <code>lty</code> and <code>sub</code> are used to define the thickness of the line (<code>2</code> means lines twice as thick as normal), the line type (<code>1</code> means a solid line, while 2 means a dashed one) and a subtitle, shown at bottom of the graph.<a href="some-r-functions-for-descriptive-statistics.html#fnref49">↩</a></p></li>
+<li id="fn50"><p>Remember that the normal probability plot is a graphical tool, therefore it helps to discriminate well if we are close or not to a situation of normality only in the most evident cases. In many situations, however, the chart does not allow to reach a clear conclusion. In these cases it is necessary to use more elaborate tools that are not discussed neither here nor in the course.<a href="some-r-functions-for-descriptive-statistics.html#fnref50">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -561,18 +594,18 @@ Figure 6.13: Example of normal probability plot for the <tt>Age</tt> variable.
 <a href="some-r-functions-for-inferential-statistics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": true,
+"github": false,
 "facebook": false,
 "twitter": true,
 "google": false,

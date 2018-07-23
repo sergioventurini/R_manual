@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>An introduction to R and Radiant for a first course in Statistics</title>
   <meta name="description" content="Short manual for learning some elements of R and Radiant. This is a piece of material of the course 30001 (Statistics) at Bocconi University.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="An introduction to R and Radiant for a first course in Statistics" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:url" content="https://sergioventurini.github.io/R_manual" />
   
   <meta property="og:description" content="Short manual for learning some elements of R and Radiant. This is a piece of material of the course 30001 (Statistics) at Bocconi University." />
   <meta name="github-repo" content="sergioventurini/R_manual" />
@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-20">
+<meta name="date" content="2018-07-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,12 +33,12 @@
   
 <link rel="prev" href="descriptive-R.html">
 <link rel="next" href="bivariate-descriptive-analyses.html">
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
 
 
 
@@ -46,6 +46,11 @@
 
 
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { TagSide: "left" }
+});
+</script>
 
 
 <style type="text/css">
@@ -99,7 +104,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">An introduction to <tt>R</tt> and <tt>Radiant</tt></a></li>
+<li><a href="./">An introduction to R and Radiant</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
@@ -108,8 +113,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1.1" data-path="software-installation.html"><a href="software-installation.html#installation-under-windows"><i class="fa fa-check"></i><b>1.1.1</b> Installation under Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="software-installation.html"><a href="software-installation.html#installation-under-mac"><i class="fa fa-check"></i><b>1.1.2</b> Installation under Mac</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="the-r-approach-to-statistics.html"><a href="the-r-approach-to-statistics.html"><i class="fa fa-check"></i><b>1.2</b> The <tt>R</tt> approach to statistics</a></li>
-<li class="chapter" data-level="1.3" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Main data structures available in <tt>R</tt></a><ul>
+<li class="chapter" data-level="1.2" data-path="the-r-approach-to-statistics.html"><a href="the-r-approach-to-statistics.html"><i class="fa fa-check"></i><b>1.2</b> The R approach to statistics</a></li>
+<li class="chapter" data-level="1.3" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Main data structures available in R</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#basic-data-types"><i class="fa fa-check"></i><b>1.3.1</b> Basic data types</a></li>
 <li class="chapter" data-level="1.3.2" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#vettori"><i class="fa fa-check"></i><b>1.3.2</b> Vectors</a></li>
 <li class="chapter" data-level="1.3.3" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#matrix"><i class="fa fa-check"></i><b>1.3.3</b> Matrices</a></li>
@@ -118,14 +123,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.3.6" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#lists"><i class="fa fa-check"></i><b>1.3.6</b> Lists</a></li>
 <li class="chapter" data-level="1.3.7" data-path="main-data-structures-available-in-r.html"><a href="main-data-structures-available-in-r.html#funzioni"><i class="fa fa-check"></i><b>1.3.7</b> Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> How to get help on <tt>R</tt> commands</a></li>
-<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> <tt>R</tt> packages</a></li>
-<li class="chapter" data-level="1.6" data-path="the-rstudio-application.html"><a href="the-rstudio-application.html"><i class="fa fa-check"></i><b>1.6</b> The <tt>RStudio</tt> application</a></li>
-<li class="chapter" data-level="1.7" data-path="the-radiant-package.html"><a href="the-radiant-package.html"><i class="fa fa-check"></i><b>1.7</b> The <tt>Radiant</tt> package</a></li>
-<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> How to load and save a file in <tt>R</tt> and <tt>Radiant</tt></a></li>
+<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> How to get help on R commands</a></li>
+<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> R packages</a></li>
+<li class="chapter" data-level="1.6" data-path="the-rstudio-application.html"><a href="the-rstudio-application.html"><i class="fa fa-check"></i><b>1.6</b> The RStudio application</a></li>
+<li class="chapter" data-level="1.7" data-path="the-radiant-package.html"><a href="the-radiant-package.html"><i class="fa fa-check"></i><b>1.7</b> The Radiant package</a></li>
+<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> How to load and save a file in R and Radiant</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>2</b> Descriptive statistics</a><ul>
-<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> First examples with <tt>R</tt></a></li>
+<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> First examples with R</a></li>
 <li class="chapter" data-level="2.2" data-path="univariate-descriptive-analysis.html"><a href="univariate-descriptive-analysis.html"><i class="fa fa-check"></i><b>2.2</b> Univariate descriptive analysis</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="univariate-descriptive-analysis.html"><a href="univariate-descriptive-analysis.html#a-single-categorical-variable"><i class="fa fa-check"></i><b>2.2.1</b> A single categorical variable</a></li>
 <li class="chapter" data-level="2.2.2" data-path="univariate-descriptive-analysis.html"><a href="univariate-descriptive-analysis.html#a-single-numerical-variable"><i class="fa fa-check"></i><b>2.2.2</b> A single numerical variable</a></li>
@@ -158,12 +163,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.4" data-path="influential-observations.html"><a href="influential-observations.html"><i class="fa fa-check"></i><b>5.4</b> Influential observations</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendix</a><ul>
-<li class="chapter" data-level="6.1" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html"><i class="fa fa-check"></i><b>6.1</b> Some <tt>R</tt> functions for descriptive statistics</a><ul>
+<li class="chapter" data-level="6.1" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html"><i class="fa fa-check"></i><b>6.1</b> Some R functions for descriptive statistics</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html#univariate-descriptive-analyses"><i class="fa fa-check"></i><b>6.1.1</b> Univariate descriptive analyses</a></li>
 <li class="chapter" data-level="6.1.2" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html#bivariate-descriptive-analyses-1"><i class="fa fa-check"></i><b>6.1.2</b> Bivariate descriptive analyses</a></li>
 <li class="chapter" data-level="6.1.3" data-path="some-r-functions-for-descriptive-statistics.html"><a href="some-r-functions-for-descriptive-statistics.html#further-graphical-representations"><i class="fa fa-check"></i><b>6.1.3</b> Further graphical representations</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html"><i class="fa fa-check"></i><b>6.2</b> Some <tt>R</tt> functions for inferential statistics</a><ul>
+<li class="chapter" data-level="6.2" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html"><i class="fa fa-check"></i><b>6.2</b> Some R functions for inferential statistics</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html#inference-on-the-mean-of-a-normal-population-1"><i class="fa fa-check"></i><b>6.2.1</b> Inference on the mean of a normal population</a></li>
 <li class="chapter" data-level="6.2.2" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html#inference-on-the-proportion-of-successes-in-a-bernoulli-population-1"><i class="fa fa-check"></i><b>6.2.2</b> Inference on the proportion of successes in a Bernoulli population</a></li>
 <li class="chapter" data-level="6.2.3" data-path="some-r-functions-for-inferential-statistics.html"><a href="some-r-functions-for-inferential-statistics.html#inference-on-the-comparison-between-the-means-of-two-normal-populations-1"><i class="fa fa-check"></i><b>6.2.3</b> Inference on the comparison between the means of two normal populations</a></li>
@@ -182,7 +187,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>An introduction to <tt>R</tt> and <tt>Radiant</tt> for a first course in Statistics</strong></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An introduction to R and Radiant for a first course in Statistics</a>
           </h1>
         </div>
 
@@ -194,87 +199,87 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">2.2</span> Univariate descriptive analysis</h2>
 <div id="a-single-categorical-variable" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> A single categorical variable</h3>
-<p>If we are interested in synthesizing the information related to a categorical variable, the tools we can use are the frequency distribution together with a graphical representation of it<a href="#fn29" class="footnoteRef" id="fnref29"><sup>29</sup></a>.</p>
-<p>Before showing some examples, we remind you that in <tt>R</tt> categorical variables correspond to factor-type vectors, which we presented in Section <a href="main-data-structures-available-in-r.html#factor-vector">1.3.4</a>. If the variable you intend to analyse is not coded as factor, you must first convert it into that format. Once the data set is loaded, we can do this in <tt>Radiant</tt> by moving to the <tt>Transform</tt> tab of the <tt>Data</tt> menu and following this procedure:</p>
+<p>If we are interested in synthesizing the information related to a categorical variable, the tools we can use are the frequency distribution together with a graphical representation of it<a href="#fn28" class="footnoteRef" id="fnref28"><sup>28</sup></a>.</p>
+<p>Before showing some examples, we remind you that in R categorical variables correspond to factor-type vectors, which we presented in Section <a href="main-data-structures-available-in-r.html#factor-vector">1.3.4</a>. If the variable you intend to analyse is not coded as factor, you must first convert it into that format. Once the data set is loaded, we can do this in Radiant by moving to the <code>Transform</code> tab of the <code>Data</code> menu and following this procedure:</p>
 <ol style="list-style-type: decimal">
-<li>select the variable in the list of variables on the left<a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a></li>
-<li>in the box labeled <tt>Transformation type</tt>, choose <tt>Change type</tt></li>
-<li>in the box called <tt>Change variable type</tt>, choose <tt>As factor</tt></li>
-<li>click on the green <tt>+Store</tt> button to confirm your choices</li>
+<li>select the variable in the list of variables on the left<a href="#fn29" class="footnoteRef" id="fnref29"><sup>29</sup></a></li>
+<li>in the box labeled <code>Transformation type</code>, choose <code>Change type</code></li>
+<li>in the box called <code>Change variable type</code>, choose <code>As factor</code></li>
+<li>click on the green <code>+Store</code> button to confirm your choices</li>
 </ol>
-<p>In Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-as-factor">2.4</a> you can see the corresponding screenshot applied to the <tt>IndustryCode</tt> variable.</p>
+<p>In Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-as-factor">2.4</a> you can see the corresponding screenshot applied to the <code>IndustryCode</code> variable.</p>
 <div class="figure" style="text-align: center"><span id="fig:Radiant-as-factor"></span>
-<img src="images/Radiant_as_factor.png" alt="&lt;tt&gt;Radiant&lt;/tt&gt; page for the conversion of a numeric column in a factor vector." width="90%" />
+<img src="images/Radiant_as_factor.png" alt="Radiant page for the conversion of a numeric column in a factor vector." width="90%" />
 <p class="caption">
-Figure 2.4: <tt>Radiant</tt> page for the conversion of a numeric column in a factor vector.
+Figure 2.4: Radiant page for the conversion of a numeric column in a factor vector.
 </p>
 </div>
-<p>Be careful because, unless you first change the name of the data frame in the <tt>Store changes in</tt> box, pressing <tt>+Store</tt> will overwrite the original data frame<a href="#fn31" class="footnoteRef" id="fnref31"><sup>31</sup></a>.</p>
-<p>To build the frequency distribution of a categorical variable in <tt>Radiant</tt> we can use the following procedure (see Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-table">2.5</a>):</p>
+<p>Be careful because, unless you first change the name of the data frame in the <code>Store changes in</code> box, pressing <code>+Store</code> will overwrite the original data frame<a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a>.</p>
+<p>To build the frequency distribution of a categorical variable in Radiant we can use the following procedure (see Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-table">2.5</a>):</p>
 <ol style="list-style-type: decimal">
-<li>click on the <tt>Pivot</tt> tab in the <tt>Data</tt> menu</li>
-<li>click in the <tt>Categorical variables</tt> box and select the variable <tt>WideIndustry</tt></li>
-<li>click on the green <tt>Create pivot table</tt> button to generate the table</li>
+<li>click on the <code>Pivot</code> tab in the <code>Data</code> menu</li>
+<li>click in the <code>Categorical variables</code> box and select the variable <code>WideIndustry</code></li>
+<li>click on the green <code>Create pivot table</code> button to generate the table</li>
 </ol>
 <div class="figure" style="text-align: center"><span id="fig:Radiant-table"></span>
-<img src="images/Radiant_table.png" alt="&lt;tt&gt;Radiant&lt;/tt&gt; page for building a frequency distribution of a factor-type vector (that is, a categorical variable)." width="90%" />
+<img src="images/Radiant_table.png" alt="Radiant page for building a frequency distribution of a factor-type vector (that is, a categorical variable)." width="90%" />
 <p class="caption">
-Figure 2.5: <tt>Radiant</tt> page for building a frequency distribution of a factor-type vector (that is, a categorical variable).
+Figure 2.5: Radiant page for building a frequency distribution of a factor-type vector (that is, a categorical variable).
 </p>
 </div>
-<p>The table will not be displayed completely unless you choose <tt>All</tt> in the <tt>Show … entries</tt> box above the table. You can also save the table in a CSV text file if you click on the downward-pointing arrow at the top right of the table. Finally, you can view the bar chart corresponding to the frequency distribution<a href="#fn32" class="footnoteRef" id="fnref32"><sup>32</sup></a> by clicking on the <tt>Show plot</tt> checkbox. If the number of variable levels is large (more than 15-20), we recommend to click on the <tt>Flip</tt> checkbox in the <tt>Plot type</tt> part to make the graph more readable. This option allows us to produce the chart horizontally.</p>
-<p>To report the relative frequencies in the table and in the graph instead of the absolute ones, click on the <tt>Normalize by</tt> box and choose <tt>Total</tt>.</p>
-<p>Please note that any changes to the table contents require updating the result, which can be done by clicking on the green button <tt>Update pivot table</tt>.</p>
+<p>The table will not be displayed completely unless you choose <code>All</code> in the <code>Show ... entries</code> box above the table. You can also save the table in a CSV text file if you click on the downward-pointing arrow at the top right of the table. Finally, you can view the bar chart corresponding to the frequency distribution<a href="#fn31" class="footnoteRef" id="fnref31"><sup>31</sup></a> by clicking on the <code>Show plot</code> checkbox. If the number of variable levels is large (more than 15-20), we recommend to click on the <code>Flip</code> checkbox in the <code>Plot type</code> part to make the graph more readable. This option allows us to produce the chart horizontally.</p>
+<p>To report the relative frequencies in the table and in the graph instead of the absolute ones, click on the <code>Normalize by</code> box and choose <code>Total</code>.</p>
+<p>Please note that any changes to the table contents require updating the result, which can be done by clicking on the green button <code>Update pivot table</code>.</p>
 </div>
 <div id="a-single-numerical-variable" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> A single numerical variable</h3>
-<p>The distribution of a numerical variable is represented by a table that shows the frequencies with which the different values were observed, if the variable is discrete, or the classes in which it is divided, if the variable is continuous. In both cases in <tt>Radiant</tt> you can still use the <tt>Pivot</tt> tab of the <tt>Data</tt> menu, but in the case of continuous variables you first need to divide the values into classes<a href="#fn33" class="footnoteRef" id="fnref33"><sup>33</sup></a>.</p>
-<p>To graphically represent the distribution of a numerical variable, it is possible to use various types of graphs including the spike plot, the histogram and the box-plot. <tt>Radiant</tt> allows us to produce only the last two, while the box-plot can only be built for groups of observations corresponding to the categories of a categorical variable.</p>
-<p>In <tt>Radiant</tt> we can construct a histogram in the <tt>Visualize</tt> tab of the <tt>Data</tt> menu following this procedure:</p>
+<p>The distribution of a numerical variable is represented by a table that shows the frequencies with which the different values were observed, if the variable is discrete, or the classes in which it is divided, if the variable is continuous. In both cases in Radiant you can still use the <code>Pivot</code> tab of the <code>Data</code> menu, but in the case of continuous variables you first need to divide the values into classes<a href="#fn32" class="footnoteRef" id="fnref32"><sup>32</sup></a>.</p>
+<p>To graphically represent the distribution of a numerical variable, it is possible to use various types of graphs including the spike plot, the histogram and the box-plot. Radiant allows us to produce only the last two, while the box-plot can only be built for groups of observations corresponding to the categories of a categorical variable.</p>
+<p>In Radiant we can construct a histogram in the <code>Visualize</code> tab of the <code>Data</code> menu following this procedure:</p>
 <ol style="list-style-type: decimal">
-<li>choose <tt>Distribution</tt> in the <tt>Plot-type</tt> box</li>
-<li>select the variable in the box called <tt>X-variable</tt></li>
-<li>click on the green button <tt>Create plot</tt></li>
+<li>choose <code>Distribution</code> in the <code>Plot-type</code> box</li>
+<li>select the variable in the box called <code>X-variable</code></li>
+<li>click on the green button <code>Create plot</code></li>
 </ol>
-<p>The slider labeled <tt>Number of bins</tt> allows to choose the number of classes to use. Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-hist">2.6</a> shows the histogram with 10 classes of equal width for the variable <tt>Salary</tt>.</p>
+<p>The slider labeled <code>Number of bins</code> allows to choose the number of classes to use. Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-hist">2.6</a> shows the histogram with 10 classes of equal width for the variable <code>Salary</code>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Radiant-hist"></span>
-<img src="images/Radiant_hist.png" alt="&lt;tt&gt;Radiant&lt;/tt&gt; page for building a histogram." width="90%" />
+<img src="images/Radiant_hist.png" alt="Radiant page for building a histogram." width="90%" />
 <p class="caption">
-Figure 2.6: <tt>Radiant</tt> page for building a histogram.
+Figure 2.6: Radiant page for building a histogram.
 </p>
 </div>
-<p>Unfortunately <tt>Radiant</tt> does not allow to construct histograms with classes of different widths, but instead allows to generate histograms for data subgroups (i.e. it allows to graphically represent the conditional distributions of a variable with respect to the values taken by a second variable). For example, if we want to construct the histograms of  conditionally upon the values of the <tt>MBA</tt> variable, which indicates whether each CEOs had an MBA title (value 1) in 1994 or not (value 0), in addition to the previous selections you need to choose also <tt>MBA</tt> in the box called <tt>Facet column</tt> and click on the green button <tt>Update plot</tt>. The corresponding graph is shown in Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-hist2">2.7</a>.</p>
+<p>Unfortunately Radiant does not allow to construct histograms with classes of different widths, but instead allows to generate histograms for data subgroups (i.e. it allows to graphically represent the conditional distributions of a variable with respect to the values taken by a second variable). For example, if we want to construct the histograms of  conditionally upon the values of the <code>MBA</code> variable, which indicates whether each CEOs had an MBA title (value 1) in 1994 or not (value 0), in addition to the previous selections you need to choose also <code>MBA</code> in the box called <code>Facet column</code> and click on the green button <code>Update plot</code>. The corresponding graph is shown in Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-hist2">2.7</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Radiant-hist2"></span>
-<img src="images/Radiant_hist2.png" alt="&lt;tt&gt;Radiant&lt;/tt&gt; page for building a histogram conditionally on the values of a second variable." width="90%" />
+<img src="images/Radiant_hist2.png" alt="Radiant page for building a histogram conditionally on the values of a second variable." width="90%" />
 <p class="caption">
-Figure 2.7: <tt>Radiant</tt> page for building a histogram conditionally on the values of a second variable.
+Figure 2.7: Radiant page for building a histogram conditionally on the values of a second variable.
 </p>
 </div>
-<p>As for box-plots, <tt>Radiant</tt> does not give the possibility to construct the box-plot for a single variable, but it allows to create box-plots for data subgroups, as we have just seen for histograms. The only difference is that to get the box-plots we have to choose <tt>Box-plot</tt> in the <tt>Plot-type</tt> box (see Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-boxplot">2.8</a>). Finally, we note that, in presence of outliers, <tt>Radiant</tt> (and <tt>R</tt> too) builds the box-plot using a slightly different rule than the one presented in the course. For more details on the construction of the box-plots in <tt>Radiant</tt>, we invite you to see the help for this command, which can be accessed by clicking on the <tt>?</tt> symbol at the bottom left of the screen.</p>
+<p>As for box-plots, Radiant does not give the possibility to construct the box-plot for a single variable, but it allows to create box-plots for data subgroups, as we have just seen for histograms. The only difference is that to get the box-plots we have to choose <code>Box-plot</code> in the <code>Plot-type</code> box (see Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-boxplot">2.8</a>). Finally, we note that, in presence of outliers, Radiant (and R too) builds the box-plot using a slightly different rule than the one presented in the course. For more details on the construction of the box-plots in Radiant, we invite you to see the help for this command, which can be accessed by clicking on the <code>?</code> symbol at the bottom left of the screen.</p>
 <div class="figure" style="text-align: center"><span id="fig:Radiant-boxplot"></span>
-<img src="images/Radiant_boxplot.png" alt="&lt;tt&gt;Radiant&lt;/tt&gt; page for building a box-plot conditionally on the values of a second variable." width="90%" />
+<img src="images/Radiant_boxplot.png" alt="Radiant page for building a box-plot conditionally on the values of a second variable." width="90%" />
 <p class="caption">
-Figure 2.8: <tt>Radiant</tt> page for building a box-plot conditionally on the values of a second variable.
+Figure 2.8: Radiant page for building a box-plot conditionally on the values of a second variable.
 </p>
 </div>
-<p>The calculation of summary indices in <tt>Radiant</tt> can be done in the <tt>Explore</tt> tab, where you need to select the variables to analyse in the box named <tt>Numeric variable (s)</tt> and the list of indices to be calculated in the <tt>Apply function (s)</tt> box. In particular, clicking on the latter will show a list of available indices to choose from. As an example, we calculate the number of missing data (<tt>n</tt>_missing), the sample mean (<tt>mean</tt>), the sample standard deviation (<tt>sd</tt>), the sample quartiles (<tt>25%</tt> and <tt>75%</tt>) and the sample coefficient of variation (<tt>cv</tt>) for the variables <tt>Salary</tt>, <tt>Bonus</tt> and <tt>Other</tt>, which indicate respectively the salary, bonuses and other compensation received by the CEOs in 1994. The result is shown in Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-summary">2.9</a>.</p>
+<p>The calculation of summary indices in Radiant can be done in the <code>Explore</code> tab, where you need to select the variables to analyse in the box named <code>Numeric variable (s)</code> and the list of indices to be calculated in the <code>Apply function (s)</code> box. In particular, clicking on the latter will show a list of available indices to choose from. As an example, we calculate the number of missing data (<code>n</code>_missing), the sample mean (<code>mean</code>), the sample standard deviation (<code>sd</code>), the sample quartiles (<code>25%</code> and <code>75%</code>) and the sample coefficient of variation (<code>cv</code>) for the variables <code>Salary</code>, <code>Bonus</code> and <code>Other</code>, which indicate respectively the salary, bonuses and other compensation received by the CEOs in 1994. The result is shown in Figure <a href="univariate-descriptive-analysis.html#fig:Radiant-summary">2.9</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Radiant-summary"></span>
-<img src="images/Radiant_summary.png" alt="&lt;tt&gt;Radiant&lt;/tt&gt; page for the calculation of summary indices." width="90%" />
+<img src="images/Radiant_summary.png" alt="Radiant page for the calculation of summary indices." width="90%" />
 <p class="caption">
-Figure 2.9: <tt>Radiant</tt> page for the calculation of summary indices.
+Figure 2.9: Radiant page for the calculation of summary indices.
 </p>
 </div>
-<p>Through the <tt>Group by</tt> box it is possible to request the calculation of the indexes for data subgroups, in analogy to what has been seen for the histogram and the box-plot.</p>
+<p>Through the <code>Group by</code> box it is possible to request the calculation of the indexes for data subgroups, in analogy to what has been seen for the histogram and the box-plot.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="29">
-<li id="fn29"><p>In <tt>R</tt> and <tt>Radiant</tt> there is no function for the calculation of the mode, which can however be inferred from the frequency distribution and the corresponding graph.<a href="univariate-descriptive-analysis.html#fnref29">↩</a></p></li>
-<li id="fn30"><p>You can apply this change simultaneously to a group of variables by selecting them all together in the list.<a href="univariate-descriptive-analysis.html#fnref30">↩</a></p></li>
-<li id="fn31"><p>This operation will not overwrite the original <tt>.RData</tt> file, but only the local copy of the data frame loaded in the memory by <tt>Radiant</tt>.<a href="univariate-descriptive-analysis.html#fnref31">↩</a></p></li>
-<li id="fn32"><p><tt>Radiant</tt> does not give you the possibility to create a pie chart. In Section <a href="descriptive-R.html#descriptive-R">2.1</a> we explained how to produce a pie chart directly in <tt>R</tt>.<a href="univariate-descriptive-analysis.html#fnref32">↩</a></p></li>
-<li id="fn33"><p>You can do this by choosing the <tt>Transform</tt> tab in the <tt>Data</tt> menu, selecting <tt>Bin</tt> in the <tt>Transformation type</tt> box and indicating the number of classes (same width) that you intend to use. Be careful because this procedure requires that there are no missing data in the column to be recoded into classes. In presence of missing data, <tt>Radiant</tt> will show an error message.<a href="univariate-descriptive-analysis.html#fnref33">↩</a></p></li>
+<ol start="28">
+<li id="fn28"><p>In R and Radiant there is no function for the calculation of the mode, which can however be inferred from the frequency distribution and the corresponding graph.<a href="univariate-descriptive-analysis.html#fnref28">↩</a></p></li>
+<li id="fn29"><p>You can apply this change simultaneously to a group of variables by selecting them all together in the list.<a href="univariate-descriptive-analysis.html#fnref29">↩</a></p></li>
+<li id="fn30"><p>This operation will not overwrite the original <code>.RData</code> file, but only the local copy of the data frame loaded in the memory by Radiant.<a href="univariate-descriptive-analysis.html#fnref30">↩</a></p></li>
+<li id="fn31"><p>Radiant does not give you the possibility to create a pie chart. In Section <a href="descriptive-R.html#descriptive-R">2.1</a> we explained how to produce a pie chart directly in R.<a href="univariate-descriptive-analysis.html#fnref31">↩</a></p></li>
+<li id="fn32"><p>You can do this by choosing the <code>Transform</code> tab in the <code>Data</code> menu, selecting <code>Bin</code> in the <code>Transformation type</code> box and indicating the number of classes (same width) that you intend to use. Be careful because this procedure requires that there are no missing data in the column to be recoded into classes. In presence of missing data, Radiant will show an error message.<a href="univariate-descriptive-analysis.html#fnref32">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -286,18 +291,18 @@ Figure 2.9: <tt>Radiant</tt> page for the calculation of summary indices.
 <a href="bivariate-descriptive-analyses.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": true,
+"github": false,
 "facebook": false,
 "twitter": true,
 "google": false,
